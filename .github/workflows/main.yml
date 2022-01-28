@@ -33,5 +33,5 @@ jobs:
       - run: 'echo "$SSH_KEY" >> ~/.ssh/github-action'
       - run: chmod 400 ~/.ssh/github-action
       - run: echo -e "Host bookstore\n\tUser bookstore\n\tHostname bookstore.harmansky.xyz\n\tIdentityFile ~/.ssh/github-action\n\tStrictHostKeyChecking No" >> ~/.ssh/config
-	- run: ls .ssh
+	- run: ls ~/.ssh
       - run: rsync -e ssh build bookstore:/web/bookstore/front
