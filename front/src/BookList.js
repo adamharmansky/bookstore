@@ -2,11 +2,13 @@ import React from 'react'
 import Axios from 'axios'
 import './App.css'
 
+const config = require('./config')
+
 export default function BookList() {
 	const [bookList, setBookList] = React.useState([])
 
 	React.useEffect(() => {
-		Axios.get('http://localhost:3001/api/list').then((data) => {
+		Axios.get(config.apiUrl + 'list').then((data) => {
 			console.log(data)
 			setBookList(data.data)
 		})

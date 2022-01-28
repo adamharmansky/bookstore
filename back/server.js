@@ -4,14 +4,13 @@ const util = require('util')
 const url = require('url')
 const fs = require('fs')
 
-allowed_websites = 'http://localhost:3000'
-const hostname = '127.0.0.1'
+allowed_websites = 'http://bookstore.harmansky.xyz'
 const port = 3001
 
 var sql_connection = mysql.createConnection({ socketPath: '/run/mysqld/mysqld.sock', user: 'root' })
 const server = express()
 
-server.get('/api/book', (req, res) => {
+server.get('/book', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', allowed_websites);
 	const urlObject = url.parse(req.url, true)
 	if (!urlObject.query.book) {
@@ -29,7 +28,7 @@ server.get('/api/book', (req, res) => {
 	})
 })
 
-server.get('/api/list', (req, res) => {
+server.get('/list', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', allowed_websites);
 	const urlObject = url.parse(req.url, true)
 	var sql_command = "SELECT isbn, title, year_pub, description, author_name FROM books LEFT JOIN authors USING (author_id) ORDER BY "
@@ -59,7 +58,6 @@ sql_connection.connect((err) => {
 	})
 })
 
-// server.listen(port, hostname, {})
 server.listen(port, () => {
 	console.log('Server started successfully')
 })
