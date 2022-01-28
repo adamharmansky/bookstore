@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SSH_KEY: ${{secrets.SSH_KEY}}
+      SSH_KNOWN_HOSTS: ${{secrets.SSH_HOSTS}}
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -31,6 +32,7 @@ jobs:
       - run: npm run build
       - run: mkdir ~/.ssh
       - run: 'echo "$SSH_KEY" > ~/.ssh/github-action'
+      - run: 'echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts'
       - run: chmod 400 ~/.ssh/github-action
       - run: echo -e "Host bookstore\n\tUser bookstore\n\tHostname bookstore.harmansky.xyz\n\tIdentityFile ~/.ssh/github-action\n\tStrictHostKeyChecking No" >> ~/.ssh/config
       - run: rsync -e ssh build bookstore:/web/bookstore/front
