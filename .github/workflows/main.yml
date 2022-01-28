@@ -30,7 +30,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: mkdir ~/.ssh
-      - run: 'echo "$SSH_KEY" >> ~/.ssh/github-action'
+      - run: 'echo "$SSH_KEY" > ~/.ssh/github-action'
       - run: chmod 400 ~/.ssh/github-action
       - run: echo -e "Host bookstore\n\tUser bookstore\n\tHostname bookstore.harmansky.xyz\n\tIdentityFile ~/.ssh/github-action\n\tStrictHostKeyChecking No" >> ~/.ssh/config
       - run: ls -l ~/.ssh
