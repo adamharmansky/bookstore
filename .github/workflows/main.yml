@@ -32,6 +32,6 @@ jobs:
       - run: mkdir ~/.ssh
       - run: 'echo "$SSH_KEY" > ~/.ssh/id_rsa'
       - run: chmod 400 ~/.ssh/id_rsa
-#     - run: ssh-keyscan -H www.harmansky.xyz > ~/.ssh/known_hosts
+      - run: ssh-keyscan -H www.harmansky.xyz > ~/.ssh/known_hosts
       - run: echo -e "Host bookstore\n\tUser bookstore\n\tHostname bookstore.harmansky.xyz\n\tIdentityFile ~/.ssh/id_rsa\n\tStrictHostKeyChecking No" >> ~/.ssh/config
       - run: rsync -e ssh build bookstore:/web/bookstore/front
