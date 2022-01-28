@@ -14,9 +14,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      SSH_KEY: ${{secrets.SSH_KEY}}
-    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -26,6 +23,14 @@ jobs:
         with:
           node-version: 16
           cache: 'npm'
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_KEY}}
+          REMOTE_HOST: bookstore.harmansky.xyz
+          REMOTE_USER: bookstore
+          SOURCE: build
+          TARGET: /web/bookstore/front
       
       - run: npm install
       - run: npm run build
