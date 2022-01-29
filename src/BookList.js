@@ -43,7 +43,7 @@ export default function BookList() {
 						</a>
 					)
 				})}
-				<p> {bookList.length === 0 ? "No matches Found." : ""} </p>
+				<p style=""> {bookList.length === 0 ? "No matches Found." : ""} </p>
 			</div>
 		</div>
 	)

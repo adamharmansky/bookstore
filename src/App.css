@@ -36,6 +36,11 @@ h1 {
     text-align: center;
 }
 
+.BookList > p {
+    text-align:center; 
+    padding: 1em;
+}
+
 .SearchForm {
     text-align: center;
 }
