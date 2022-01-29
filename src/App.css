@@ -7,6 +7,8 @@
 
 .NavBarButton {
 	padding: 1em 0.5em 1em 0.5em;
+    text-decoration: none;
+	background-color: #3C4454;
 }
 
 .NavBarButton:hover {
