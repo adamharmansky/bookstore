@@ -27,10 +27,10 @@ export default function BookList() {
 				{bookList.map((value, key) => {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
-                            <img className='BookListItemImage' src={value.image ? value.image : "www.harmansky.xyz/vlc.png"} alt='Missing Image!!!'></img>
+                            <img className='BookListItemImage' src={value.image ? value.image : "www.harmansky.xyz/vlc.png"} alt='Missing'></img>
                             <div className='BookListItemInfo'>
-    							<div className='BookListItemAuthor'> {value.author_name} </div>
 	    						<div className='BookListItemTitle'> {value.title} </div>
+    							<div className='BookListItemAuthor'> {value.author_name} </div>
                             </div>
 							<div className='BookListDescription'> {value.description ? value.description : "No Description"} </div>
 						</a>
