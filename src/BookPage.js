@@ -20,7 +20,7 @@ export default function BookPage() {
 				<h1> {bookData.title} </h1>
 				<i> {bookData.author_name} </i>
 			</center>
-			<img src={bookData.image ? bookData.image : '../public/reading.png'} alt='Bruh' className='BookPageImage' />
+			<img src={bookData.image ? bookData.image : '%PUBLIC_URL%/reading.png'} alt='Bruh' className='BookPageImage' />
 			<p> {bookData.description} </p>
 		</div>
 	)
