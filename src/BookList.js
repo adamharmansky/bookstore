@@ -33,7 +33,7 @@ export default function BookList() {
 									<div className="BookListItemPublish"> {value.publisher_name ? value.publisher_name : "MICV Publishing INC."} </div>
 									<div className="BookListItemYear"> {value.year_pub} </div>
 								</div>
-								<p className='BookListDescription'> {value.description ? value.description.slice(0,330) + (value.description.length ? "..." : "") : "No Description"} </p>
+								<p className='BookListDescription'> {value.description ? value.description.slice(0,330) + (value.description.length > 330 ? "..." : "") : "No Description"} </p>
 						</a>
 					)
 				})}
