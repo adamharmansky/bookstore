@@ -8,7 +8,8 @@ export default function BookList() {
 	const [bookList, setBookList] = React.useState([])
 
 	React.useEffect(() => {
-		Axios.get(config.apiUrl + 'list').then((data) => {
+		const url = new URL(window.location.href)
+		Axios.get(config.apiUrl + 'list' + url.search).then((data) => {
 			console.log(data)
 			setBookList(data.data)
 		})
@@ -18,6 +19,9 @@ export default function BookList() {
 	return (
 		<div>
 			<h1> Books </h1>
+			<form name="search_form">
+					<input name="q" type="text" />
+			</form>
 			<div className='BookList'>
 				{bookList.map((value, key) => {
 					return (
