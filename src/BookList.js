@@ -33,7 +33,7 @@ export default function BookList() {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
-								<div className='BookLockstItemBlock'>
+								<div className='BookListItemBlock'>
 									<div className='BookListItemTitle'> {value.title} </div>
 									<div className='BookListItemInfo'>
 										{value.author}, {value.publisher ? value.publisher : "Neznáme vydavateľstvo"}, {value.year_pub}, {value.pages} strán, {value.read_time}, {value.lang}, {value.subject}
