@@ -37,8 +37,7 @@ h1 {
 }
 
 .SearchForm {
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
 }
 
 .BookListItem {

@@ -30,6 +30,7 @@ export default function BookList() {
                             <div className='BookListItemInfo'>
 	    						<div className='BookListItemTitle'> {value.title} </div>
     							<div className='BookListItemAuthor'> {value.author_name} </div>
+                                <div className="BookListItemPublish"> /*{value.publisher_name} - */ {value.year_pub} </div>
                             </div>
 							<div className='BookListDescription'> {value.description ? value.description : "No Description"} </div>
 						</a>
