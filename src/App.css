@@ -62,13 +62,7 @@ h1 {
 }
 
 .BookListItemInfo {
-    padding: 0.5em
-}
-
-.BookListItemAuthor {
-	min-width: 10em;
-	margin: 0.5em;
-	font-style: italic;
+    margin: 0.5em
 }
 
 .BookListItemTitle {
@@ -76,6 +70,25 @@ h1 {
 	font-size: 1.2em;
 	min-width: 10em;
 	margin: 0.5em;
+}
+
+.BookListItemAuthor {
+	min-width: 10em;
+    font-size: 1.1em;
+	margin: 0.5em;
+	font-style: italic;
+}
+
+.BookListItemPublish {
+	min-width: 10em;
+	margin: 0.5em;
+	font-style: italic;
+}
+
+.BookListItemYear {
+	min-width: 10em;
+	margin: 0.5em;
+	font-style: italic;
 }
 
 .BookPageImage {
