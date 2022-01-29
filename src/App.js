@@ -9,8 +9,8 @@ function App() {
 	return (
 		<div className='App'>
 			<div className='NavBar'>
-				<div className='NavBarButton'> <a href='/'> Home </a> </div>
-				<div className='NavBarButton'> <a href='/list'> Book List </a> </div>
+				<div className='NavBarButton'> <a href='/'> Domov </a> </div>
+				<div className='NavBarButton'> <a href='/list'> Zoznam kníh </a> </div>
 			</div>
 			<main>
 				<Router>
