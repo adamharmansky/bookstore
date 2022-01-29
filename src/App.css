@@ -59,6 +59,7 @@ form > input[type=text] {
     background-position: 0.5em;
     background-size: 1em;
     background-repeat: no-repeat;
+    color: #E5E9F0;
 }
 
 .BookListItem {

@@ -26,7 +26,7 @@ export default function BookList() {
 				{bookList.map((value, key) => {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
-								<img className='BookListItemImage' src={value.image ? value.image : "http://www.harmansky.xyz/vlc.png"} alt="Chýbajúci obrázok"></img>
+								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
 								<div className='BookListItemInfo'>
 									<div className='BookListItemTitle'> {value.title} </div>
 									<div className='BookListItemAuthor'> {value.author_name} </div>
@@ -37,6 +37,7 @@ export default function BookList() {
 						</a>
 					)
 				})}
+				<p> {bookList.length === 0 ? "No matches Found." : ""} </p>
 			</div>
 		</div>
 	)
