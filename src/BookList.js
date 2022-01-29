@@ -20,7 +20,7 @@ export default function BookList() {
 		<div>
 			<h1> Books </h1>
 			<form className="SearchForm" name="search_form">
-					<input name="q" type="text" />
+					<input name="q" type="text" placeholder="Zadajte meno knihy..."/>
 			</form>
 			<div className='BookList'>
 				{bookList.map((value, key) => {
