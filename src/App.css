@@ -52,7 +52,7 @@ form > input[type=text] {
 
     padding-left: 40px;
     background-color: white;
-    background-image: url('/search.png');
+    background-image: url('../public/search.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
 }
