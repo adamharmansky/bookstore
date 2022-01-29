@@ -71,6 +71,7 @@ h1 {
 	padding: 0.5em;
 	display:block;
 	float:left;
+	min-height:200px;
 }
 
 .BookListItemTitle {
