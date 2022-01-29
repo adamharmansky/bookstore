@@ -25,8 +25,8 @@ export default function BookList() {
 	return (
 		<div>
 			<h1> Knihy </h1>
-			<form className="SearchForm" name="search_form" value={get_query()}>
-					<input name="q" type="text" placeholder="Zadajte názov knihy..."/>
+			<form className="SearchForm" name="search_form">
+					<input name="q" type="text" placeholder="Zadajte názov knihy..." value={get_query()}/>
 			</form>
 			<div className='BookList'>
 				{bookList.map((value, key) => {
