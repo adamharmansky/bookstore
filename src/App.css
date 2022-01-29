@@ -51,7 +51,10 @@ form > input[type=text] {
     font-size: 1em;
 
     padding-left: 40px;
-    background-color: white;
+    background-color: #4C566A;
+    border-color: #3B4252;
+    border: 2px;
+    border-radius: 5px;
     background-image: url('../public/search.png');
     background-position: 0.5em;
     background-size: 1em;
