@@ -9,6 +9,7 @@ export default function BookList() {
 
 	React.useEffect(() => {
 		const url = new URL(window.location.href)
+		// el baile del troleo
 		Axios.get(config.apiUrl + 'list' + url.search).then((data) => {
 			console.log(data)
 			setBookList(data.data)
