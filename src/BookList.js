@@ -35,11 +35,13 @@ export default function BookList() {
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
 								<div className='BookListItemInfo'>
 									<div className='BookListItemTitle'> {value.title} </div>
-									<div className='BookListItemAuthor'> {value.author_name} </div>
-									<div className="BookListItemPublish"> {value.publisher_name ? value.publisher_name : "Neznáme vydavateľstvo"} </div>
+									<div className='BookListItemAuthor'> {value.author} </div>
+									<div className="BookListItemPublish"> {value.publisher ? value.publisher : "Neznáme vydavateľstvo"} </div>
 									<div className="BookListItemYear"> {value.year_pub} </div>
+                                    <div> {value.pages} strán - {value.read_time} </div>
+                                    <div> {value.lang} - {value.subject} </div>
 								</div>
-								<p className='BookListDescription'> {value.description ? value.description.slice(0,360) + (value.description.length > 360 ? "..." : "") : "Žiaden popis"} </p>
+								<p className='BookListDescription'> {value.desc ? value.desc.slice(0,360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
 						</a>
 					)
 				})}

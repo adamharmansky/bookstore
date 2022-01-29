@@ -18,10 +18,10 @@ export default function BookPage() {
 		<div>
 			<center>
 				<h1> {bookData.title} </h1>
-				<i> {bookData.author_name} </i>
+				<i> {bookData.author} </i>
 			</center>
-			<img src={bookData.image ? bookData.image : process.env.PUBLIC_URL + "/reading.png"} alt='Bruh' className='BookPageImage' />
-			<p> {bookData.description} </p>
+			<img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
+			<p> {bookData.desc} </p>
 		</div>
 	)
 }
