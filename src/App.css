@@ -41,9 +41,9 @@ h1 {
 }
 
 .BookListItem {
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
-	justify-content: left;
+	justify-content: left; */
 	margin: 0.5em 0 0.5em 0;
 	padding: 1em;
 	background-color: #3b4252;
@@ -51,20 +51,24 @@ h1 {
 	color: #e5e9f0;
 	text-decoration: none;
     
-    /* centering */
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+	/* centering */
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .BookListItemImage {
     height: 200px;
+	display:block;
+	float:left;
 }
 
 .BookListItemInfo {
 	margin: 0.5em;
-	min-width: 10em;
+	width: 10em;
 	padding: 0.5em;
+	display:block;
+	float:left;
 }
 
 .BookListItemTitle {
