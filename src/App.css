@@ -40,6 +40,23 @@ h1 {
     text-align: center;
 }
 
+form {
+    padding: 1em;
+}
+
+form > input[type=text] {
+    padding: 0.4rem;
+    width: 250px;
+    height: 15px;
+    font-size: 1em;
+
+    padding-left: 40px;
+    background-color: white;
+    background-image: url('/search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
 .BookListItem {
 	display:block;
 	min-height:200px;
