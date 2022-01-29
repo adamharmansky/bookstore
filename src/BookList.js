@@ -33,13 +33,11 @@ export default function BookList() {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
-								<div className='BookListItemInfo'>
+								<div className='BookLockstItemBlock'>
 									<span className='BookListItemTitle'> {value.title} </span>
-									<span className='BookListItemAuthor'> {value.author} </span>
-									<span className="BookListItemPublish"> {value.publisher ? value.publisher : "Neznáme vydavateľstvo"} </span>
-									<span className="BookListItemYear"> {value.year_pub} </span>
-									<span> {value.pages} strán - {value.read_time} </span>
-									<span> {value.lang} - {value.subject} </span>
+									<div className='BookListItemInfo'>
+										{value.author}, {value.publisher ? value.publisher : "Neznáme vydavateľstvo"}, {value.year_pub}, {value.pages} strán, {value.read_time}, {value.lang}, {value.subject}
+									</div>
 									<p className='BookListDescription'> {value.desc ? value.desc.slice(0,360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
 								</div>
 						</a>
