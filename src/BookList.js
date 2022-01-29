@@ -34,14 +34,14 @@ export default function BookList() {
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
 								<div className='BookListItemInfo'>
-									<div className='BookListItemTitle'> {value.title} </div>
-									<div className='BookListItemAuthor'> {value.author} </div>
-									<div className="BookListItemPublish"> {value.publisher ? value.publisher : "Neznáme vydavateľstvo"} </div>
-									<div className="BookListItemYear"> {value.year_pub} </div>
-                                    <div> {value.pages} strán - {value.read_time} </div>
-                                    <div> {value.lang} - {value.subject} </div>
+									<span className='BookListItemTitle'> {value.title} </span>
+									<span className='BookListItemAuthor'> {value.author} </span>
+									<span className="BookListItemPublish"> {value.publisher ? value.publisher : "Neznáme vydavateľstvo"} </span>
+									<span className="BookListItemYear"> {value.year_pub} </span>
+									<span> {value.pages} strán - {value.read_time} </span>
+									<span> {value.lang} - {value.subject} </span>
+									<p className='BookListDescription'> {value.desc ? value.desc.slice(0,360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
 								</div>
-								<p className='BookListDescription'> {value.desc ? value.desc.slice(0,360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
 						</a>
 					)
 				})}
