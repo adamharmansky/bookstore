@@ -41,6 +41,7 @@ h1 {
 }
 
 .BookListItem {
+	display:block;
 	/* display: flex;
 	flex-direction: row;
 	justify-content: left; */
