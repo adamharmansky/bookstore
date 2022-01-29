@@ -19,7 +19,7 @@ export default function BookList() {
 	return (
 		<div>
 			<h1> Knihy </h1>
-			<form className="SearchForm" name="search_form">
+			<form className="SearchForm" name="search_form" value={window.location.href.match('?q=.*$').slice(3, 1024)}>
 					<input name="q" type="text" placeholder="Zadajte názov knihy..."/>
 			</form>
 			<div className='BookList'>
