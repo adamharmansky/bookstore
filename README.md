@@ -1,6 +1,6 @@
 # Stránka knižnice pre školu
 
-Momentálne na [https://bookstore.harmansky.xyz](https://bookstore.harmansky.xyz).
+Momentálne na [http://bookstore.harmansky.xyz](http://bookstore.harmansky.xyz).
 
 ## TO-DO
 
