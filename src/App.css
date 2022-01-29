@@ -32,6 +32,10 @@ main {
 	margin: 1em;
 }
 
+h1 {
+    text-align: center;
+}
+
 .BookListItem {
 	display: flex;
 	flex-direction: row;
@@ -42,6 +46,15 @@ main {
 	border-radius: 5px;
 	color: #e5e9f0;
 	text-decoration: none;
+    max-width: 1200px;
+}
+
+.BookListItemImage {
+    height: 200px;
+}
+
+.BookListItemInfo {
+
 }
 
 .BookListItemAuthor {
