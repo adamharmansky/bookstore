@@ -62,25 +62,21 @@ h1 {
 }
 
 .BookListItemInfo {
-    margin: 0.5em
+	margin: 0.5em;
+	width: 10em;
+	padding: 0.5em;
 }
 
 .BookListItemTitle {
 	font-weight: bold;
 	font-size: 1.2em;
-	width: 10em;
-	margin: 0.5em;
 }
 
 .BookListItemPublish {
-	min-width: 10em;
-	margin: 0.5em;
 	font-style: italic;
 }
 
 .BookListItemYear {
-	min-width: 10em;
-	margin: 0.5em;
 	font-style: italic;
 }
 
