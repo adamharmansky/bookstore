@@ -68,15 +68,8 @@ h1 {
 .BookListItemTitle {
 	font-weight: bold;
 	font-size: 1.2em;
-	min-width: 10em;
+	width: 10em;
 	margin: 0.5em;
-}
-
-.BookListItemAuthor {
-	min-width: 10em;
-    font-size: 1.1em;
-	margin: 0.5em;
-	font-style: italic;
 }
 
 .BookListItemPublish {
