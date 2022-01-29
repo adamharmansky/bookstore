@@ -4,6 +4,12 @@ import './App.css'
 
 const config = require('./config')
 
+function get_query() {
+	const params = new URLSearchParams(window.location.search);
+	if (params.has('q')) return params.get('q')
+	else return ''
+}
+
 export default function BookList() {
 	const [bookList, setBookList] = React.useState([])
 
@@ -19,7 +25,7 @@ export default function BookList() {
 	return (
 		<div>
 			<h1> Knihy </h1>
-			<form className="SearchForm" name="search_form" value={window.location.href.match('?q=.*$').slice(3, 1024)}>
+			<form className="SearchForm" name="search_form" value={get_query()}>
 					<input name="q" type="text" placeholder="Zadajte názov knihy..."/>
 			</form>
 			<div className='BookList'>
