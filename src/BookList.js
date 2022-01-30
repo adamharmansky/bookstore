@@ -17,15 +17,15 @@ export default function BookList() {
 		const url = new URL(window.location.href)
 		Axios.get(config.apiUrl + 'list' + url.search).then((data) => {
 			console.log(data)
-			setBookList(data.data)
+			setBookList(data.data.books)
 		})
 	}, [])
 
 	const thisPageUrl = new URL('/book/', window.location.href)
-	const pageNumbers = [];
-	for (let i = 0; i < bookList.pageCount; i++) {
-		pageNumbers.push(<a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
-	}
+	// const pageNumbers = [];
+	// for (let i = 0; i < bookList.pageCount; i++) {
+	// 	pageNumbers.push(<a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
+	// }
 	return (
 		<div>
 			<h1> Knihy </h1>
@@ -33,7 +33,7 @@ export default function BookList() {
 					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={get_query()}/>
 			</form>
 			<div className='BookList'>
-				{bookList['books'].map((value, key) => {
+				{bookList.map((value, key) => {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
@@ -47,9 +47,8 @@ export default function BookList() {
 						</a>
 					)
 				})}
-				<p> {bookList['books'].length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
+				<p> {bookList.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
 				<div className="pageNumbers">
-					{pageNumbers}
 				</div>
 			</div>
 		</div>
