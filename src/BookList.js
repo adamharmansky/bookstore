@@ -32,16 +32,17 @@ export default function BookList() {
 	const thisPageUrl = new URL('/book/', window.location.href)
 	const pageNumbers = [];
 	const current_page = parseInt(get_page())
-	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(get_query?"&q="+get_query():"")}>{"<<"}</a>)
+	const query = get_query()
+	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>)
 	for (let i = 0; i < pageCount; i++) {
-		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(get_query?"&q="+get_query():"")}>{i}</a>)
+		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(query?"&q="+query:"")}>{i}</a>)
 	}
-	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(get_query?"&q="+get_query():"")}>{">>"}</a>)
+	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>)
 	return (
 		<div>
 			<h1> Knihy </h1>
 			<form className="SearchForm" name="search_form">
-					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={get_query()}/>
+					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={query}/>
 			</form>
 			<div className='BookList'>
 				{bookList.map((value, key) => {
