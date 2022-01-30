@@ -21,6 +21,9 @@ export default function BookPage() {
 				<i> {bookData.author} </i>
 			</center>
 			<img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
+            <center>
+                <p>{bookData.year_pub}, {bookData.pages} strán, {bookData.read_time}, {bookData.lang}, {bookData.subject}</p>
+            </center>
 			<p> {bookData.desc} </p>
 		</div>
 	)
