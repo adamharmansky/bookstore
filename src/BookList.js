@@ -33,7 +33,7 @@ export default function BookList() {
 					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={get_query()}/>
 			</form>
 			<div className='BookList'>
-				{bookList.books.map((value, key) => {
+				{bookList['books'].map((value, key) => {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
@@ -47,7 +47,7 @@ export default function BookList() {
 						</a>
 					)
 				})}
-				<p> {bookList.books.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
+				<p> {bookList['books'].length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
 				<div className="pageNumbers">
 					{pageNumbers}
 				</div>
