@@ -12,12 +12,14 @@ function get_query() {
 
 export default function BookList() {
 	const [bookList, setBookList] = React.useState([])
+	const [pageCount, setPageCount] = React.useState(0)
 
 	React.useEffect(() => {
 		const url = new URL(window.location.href)
 		Axios.get(config.apiUrl + 'list' + url.search).then((data) => {
 			console.log(data)
-			setBookList(data.data)
+			setBookList(data.data.books)
+            setPageCount(data.data.pageCount)
 		})
 	}, [])
 
@@ -44,6 +46,17 @@ export default function BookList() {
 					)
 				})}
 				<p> {bookList.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
+                <div className="pageNumbers">
+                    {
+                        function (){
+                            let result;
+                            for (let i = 0; i<pageCount; i++) {
+                                result+=(<a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
+                            }
+                            return result
+                        }()
+                    }
+                </div>
 			</div>
 		</div>
 	)

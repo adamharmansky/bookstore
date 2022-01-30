@@ -110,3 +110,14 @@ form > input[type=text] {
 .BookListItemInfo {
 	font-style: italic;
 }
+
+.pageNumbers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.pageNumber {
+    text-decoration: none;
+}
