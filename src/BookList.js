@@ -11,7 +11,7 @@ function get_query() {
 }
 
 export default function BookList() {
-	var [bookList, setBookList] = React.useState({})
+	var [bookList, setBookList] = React.useState([])
 
 	React.useEffect(() => {
 		const url = new URL(window.location.href)
