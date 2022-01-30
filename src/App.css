@@ -85,7 +85,13 @@ form > input[type=text] {
 }
 
 .BookListItemImage {
-    height: 200px;
+    width: 200px;
+}
+
+@media(max-width: 800px) {
+    .BookListItemImage {
+        width: 15%; 
+    }
 }
 
 .BookListItemBlock {
