@@ -1,3 +1,3 @@
 module.exports = {
-	"apiUrl": 'http://bookstore.harmansky.xyz/api/'
+	"apiUrl": 'https://bookstore.harmansky.xyz/api/'
 }
