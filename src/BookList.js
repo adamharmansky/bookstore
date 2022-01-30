@@ -31,9 +31,9 @@ export default function BookList() {
 
 	const thisPageUrl = new URL('/book/', window.location.href)
 	const pageNumbers = [];
-	const current_page = get_page()
+	const current_page = parseInt(get_page())
 	for (let i = 0; i < pageCount; i++) {
-		pageNumbers.push(i === current_page ? <span>{i}</span> : <a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
+		pageNumbers.push(i === current_page ? <span>{i}</span> : <a className="pageNumber" href={"/list?page="+i+(get_query?"&q="+get_query():"")}>{i}</a>)
 	}
 	return (
 		<div>
