@@ -126,7 +126,7 @@ form > input[type=text] {
 }
 
 .pageNumber {
-    text-decoration: underline;
+    text-decoration: none;
     padding: 0.5em;
     margin: 0 0.1em 0 0.1em;
     background-color: #434C5E;
