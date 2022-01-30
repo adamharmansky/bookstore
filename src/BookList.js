@@ -32,9 +32,11 @@ export default function BookList() {
 	const thisPageUrl = new URL('/book/', window.location.href)
 	const pageNumbers = [];
 	const current_page = parseInt(get_page())
+	if (current_page > 0) pageNumbers.push(<a className="pagePrev" href={"/list?page="+(current_page-1)+(get_query?"&q="+get_query():"")}>{"<<"}</a>)
 	for (let i = 0; i < pageCount; i++) {
 		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(get_query?"&q="+get_query():"")}>{i}</a>)
 	}
+	if (current_page < pageCount-1) pageNumbers.push(<a className="pagePrev" href={"/list?page="+(current_page+1)+(get_query?"&q="+get_query():"")}>{">>"}</a>)
 	return (
 		<div>
 			<h1> Knihy </h1>
