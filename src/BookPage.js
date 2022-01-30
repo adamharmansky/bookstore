@@ -15,7 +15,7 @@ export default function BookPage() {
 	}, [])
 
 	return (
-		<div>
+		<div className="BookPageInfo">
 			<center>
 				<h1> {bookData.title} </h1>
 				<i> {bookData.author} </i>

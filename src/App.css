@@ -101,11 +101,6 @@ form > input[type=text] {
 	margin-bottom: 0.5em;
 }
 
-.BookPageImage {
-	float: right;
-	width: 30%;
-}
-
 .BookListItemInfo {
 	font-style: italic;
 }
@@ -131,4 +126,12 @@ form > input[type=text] {
     margin: 0 0.1em 0 0.1em;
     background-color: #434C5E;
     border-radius: 5px;
+}
+
+
+
+/* BookPage section */
+
+.BookPageInfo {
+    max-width: 1000px
 }
