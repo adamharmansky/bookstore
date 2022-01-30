@@ -85,7 +85,14 @@ form > input[type=text] {
 }
 
 .BookListItemImage {
-    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+
+@media(max-width: 800px) {
+    .BookListItemImage {
+        width: 26%; 
+    }
 }
 
 .BookListItemBlock {
@@ -99,11 +106,6 @@ form > input[type=text] {
 	font-style: normal;
 	font-size: 1.2em;
 	margin-bottom: 0.5em;
-}
-
-.BookPageImage {
-	float: right;
-	width: 30%;
 }
 
 .BookListItemInfo {
@@ -131,4 +133,23 @@ form > input[type=text] {
     margin: 0 0.1em 0 0.1em;
     background-color: #434C5E;
     border-radius: 5px;
+}
+
+
+
+/* BookPage section */
+
+.BookPageInfo {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BookPageImage {
+    display: block;
+    height: 300px;
+    padding: 1em;
+    background-color: #3b4252;
+    margin: 2em auto;
+    border-radius: 20px;
 }
