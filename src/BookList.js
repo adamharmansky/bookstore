@@ -11,19 +11,21 @@ function get_query() {
 }
 
 export default function BookList() {
-	const [bookList, setBookList] = React.useState([])
-	const [pageCount, setPageCount] = React.useState(0)
+	var [bookList, setBookList] = React.useState({})
 
 	React.useEffect(() => {
 		const url = new URL(window.location.href)
 		Axios.get(config.apiUrl + 'list' + url.search).then((data) => {
 			console.log(data)
-			setBookList(data.data.books)
-            setPageCount(data.data.pageCount)
+			setBookList(data.data)
 		})
 	}, [])
 
 	const thisPageUrl = new URL('/book/', window.location.href)
+	const pageNumbers = [];
+	for (let i = 0; i < bookList.pageCount; i++) {
+		pageNumbers.push(<a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
+	}
 	return (
 		<div>
 			<h1> Knihy </h1>
@@ -31,7 +33,7 @@ export default function BookList() {
 					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={get_query()}/>
 			</form>
 			<div className='BookList'>
-				{bookList.map((value, key) => {
+				{bookList.books.map((value, key) => {
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
@@ -45,18 +47,10 @@ export default function BookList() {
 						</a>
 					)
 				})}
-				<p> {bookList.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
-                <div className="pageNumbers">
-                    {
-                        function (){
-                            let result;
-                            for (let i = 0; i<pageCount; i++) {
-                                result+=(<a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
-                            }
-                            return result
-                        }()
-                    }
-                </div>
+				<p> {bookList.books.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
+				<div className="pageNumbers">
+					{pageNumbers}
+				</div>
 			</div>
 		</div>
 	)
