@@ -60,7 +60,7 @@ export default function BookList() {
 					)
 				})}
 				<p> {bookList.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
-				{pageCount !== 0 ? <div className="pageNumbers"> {pageNumbers} </div> : []}
+				{pageCount > 1 ? <div className="pageNumbers"> {pageNumbers} </div> : []}
 			</div>
 		</div>
 	)
