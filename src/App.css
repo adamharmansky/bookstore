@@ -86,11 +86,12 @@ form > input[type=text] {
 
 .BookListItemImage {
     width: 200px;
+    object-fit: contain;
 }
 
 @media(max-width: 800px) {
     .BookListItemImage {
-        width: 15%; 
+        width: 26%; 
     }
 }
 
