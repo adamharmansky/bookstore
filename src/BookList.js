@@ -10,6 +10,12 @@ function get_query() {
 	else return ''
 }
 
+function get_page() {
+	const params = new URLSearchParams(window.location.search);
+	if (params.has('page')) return params.get('page')
+	else return 0
+}
+
 export default function BookList() {
 	var [bookList, setBookList] = React.useState([])
 	var [pageCount, setPageCount] = React.useState(0)
@@ -25,8 +31,9 @@ export default function BookList() {
 
 	const thisPageUrl = new URL('/book/', window.location.href)
 	const pageNumbers = [];
+	const current_page = get_page()
 	for (let i = 0; i < pageCount; i++) {
-		pageNumbers.push(<a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
+		pageNumbers.push(i === current_page ? <span>{i}</span> : <a className="pageNumber" href={"/list?page="+i+"&q="+get_query()}>{i}</a>)
 	}
 	return (
 		<div>
