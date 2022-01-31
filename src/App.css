@@ -156,6 +156,9 @@ h1, h2 {
 	margin-left: auto;
 	margin-right: auto;
     background-color: ghostwhite;
+    padding: 2em;
+    border: 3px solid lightgray;
+    border-radius: 15px;
 }
 
 .BookPageTitle, .BookPageAuthor
