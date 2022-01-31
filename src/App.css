@@ -64,6 +64,9 @@ form > input[type=text] {
 	background-position: 0.5em;
 	background-size: 1em;
 	background-repeat: no-repeat;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #dee1e6;
 	color: #2E3440;
 }
 
