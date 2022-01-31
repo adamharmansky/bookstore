@@ -24,7 +24,7 @@ export default function AddBook() {
 				name="author"
 				onChange={(e)=>{setAuthor(e.target.value)}}
 			/>
-			<button onPress={handleSubmit}> Pridať </button>
+			<button onClick={handleSubmit}> Pridať </button>
 		</div>
 	)
 }
