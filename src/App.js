@@ -11,6 +11,7 @@ function App() {
 			<div className='NavBar'>
 				<a className='NavBarButton' href='/'> Domov </a> 
 				<a className='NavBarButton' href='/list'> Zoznam kníh </a> 
+				<a className='NavBarButton' href='/add'> Pridať knihu </a> 
 			</div>
 			<main>
 				<Router>
