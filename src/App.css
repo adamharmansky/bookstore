@@ -1,9 +1,9 @@
 .NavBar {
-	background-color: #3b4252;
+	background-color: #212121;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	box-shadow: 0 0 1em #2E344080;
+	box-shadow: 0 0 1em #00000080;
 }
 
 .NavBarButton {
@@ -12,22 +12,22 @@
 }
 
 .NavBarButton:hover {
-	background-color: #434c5e;
+	background-color: #333333;
 }
 
 .App {
 	text-align: left;
-	background-color: #E5E9F0;
+	background-color: #ffffff;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: left;
 	font-size: 12pt;
-	color: #2E3440;
+	color: #202020;
 }
 
 a {
-	color: #88c0d0;
+	color: #5E81AC;
 }
 
 main {
@@ -58,9 +58,7 @@ form > input[type=text] {
 	font-size: 1em;
 
 	padding-left: 40px;
-	background-color: #D8DEE9;
-	border-color: #4C566A;
-	border: 2px;
+	background-color: #dee1e6;
 	border-radius: 5px;
 	background-image: url('../public/search.png');
 	background-position: 0.5em;
@@ -75,9 +73,9 @@ form > input[type=text] {
 	justify-content: left;
 	margin: 0.5em 0 0.5em 0;
 	padding: 1em;
-	background-color: #D8DEE9;
+	background-color: #dee1e6;
 	border-radius: 5px;
-	color: #2E3440;
+	color: #202020;
 	text-decoration: none;
 	
 	/* centering */
@@ -125,7 +123,7 @@ form > input[type=text] {
 	text-decoration: none;
 	padding: 0.5em;
 	margin: 0 0.1em 0 0.1em;
-	background-color: #D8DEE9;
+	background-color: #dee1e6;
 	border-radius: 5px;
 }
 
@@ -133,7 +131,7 @@ form > input[type=text] {
 	text-decoration: none;
 	padding: 0.5em;
 	margin: 0 0.1em 0 0.1em;
-	background-color: #D8DEE9;
+	background-color: #dee1e6;
 	border-radius: 5px;
 }
 
@@ -174,7 +172,7 @@ h1, h2 {
 .BookPageImage {
 	display: block;
 	padding: 1em;
-	background-color: #D8DEE9;
+	background-color: #dee1e6;
 	margin: 1em 0;
 	border-radius: 20px;
 	max-width: calc(100%-3em);
