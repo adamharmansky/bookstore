@@ -139,6 +139,11 @@ form > input[type=text] {
 
 /* BookPage section */
 
+h1, h2 {
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
 .BookPageContainer {
     max-width: 800px;
     margin-left: auto;
@@ -169,7 +174,7 @@ form > input[type=text] {
     display: block;
     padding: 1em;
     background-color: #3b4252;
-    margin: 2em 0;
+    margin: 1em 0;
     border-radius: 20px;
     max-width: calc(100%-3em);
 }
