@@ -26,16 +26,34 @@ export default function BookPage() {
 	}, [])
 
 	return (
-		<div className="BookPageInfo">
-			<center>
-				<h1> {bookData.title} </h1>
-				<i> {bookData.author} </i>
-			</center>
-			<img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
-			<center>
-				<p>{bookData.year_pub}, {bookData.pages} strán, {bookData.read_time}, {bookData.lang}, {bookData.subject}</p>
-			</center>
-			<p> {bookData.desc} </p>
+		<div className="BookPageContainer">
+            <h1> {bookData.title} </h1>
+            <i> {bookData.author} </i>
+            <div className="BookPageText">
+                <div className="BookPageLeft">
+                    <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
+                    <h2>OBSAH</h2>
+                    <p className="BookPageContent">{bookData.content ? bookData.content : "Chýbajúci obsah"}</p>
+                </div>
+
+                <div className="BookPageRight">
+                    <h2>O KNIHE</h2>
+                    <p>{bookData.desc}</p>
+                    <span className="BookPageInfo">
+                        Priemerný čas čítania: {bookData.read_time} <br/>
+                        Počet strán: {bookData.pages} <br/>
+                        Rok vydania: {bookData.year_pub} <br/>
+                    </span>
+                    <h2>ÚRYVOK</h2>
+                    <p>{bookData.sample}</p>
+                    <h2>KĽÚČOVÉ SLOVÁ</h2>
+                    <p2>{bookData.keywords}</p2>
+                </div>
+                <center>
+                    <p>{bookData.year_pub}, {bookData.pages} strán, {bookData.read_time}, {bookData.lang}, {bookData.subject}</p>
+                </center>
+                <p> {bookData.desc} </p>
+            </div>
 		</div>
 	)
 }
