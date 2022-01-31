@@ -49,27 +49,7 @@ export default function AddBook() {
 
 	return (
 		<div className='AddBookForm'>
-			{/*
-			<input type="text"
-				name="title"
-				onChange={(e)=>{setTitle(e.target.value)}}
-			/>
-			<input type="text"
-				name="author"
-				onChange={(e)=>{setAuthor(e.target.value)}}
-			/>
-			<input type="text"
-				name="description"
-				onChange={(e)=>{setDescription(e.target.value)}}
-			/>
-			<input type="text"
-				name="subject"
-				onChange={(e)=>{setSubject(e.target.value)}}
-			/>
-			<button onClick={handleSubmit}> Pridať </button>
-			*/}
-
-			<Autocomplete options={subjects} style={{width: 300}}
+			<Autocomplete disablePortal options={subjects} style={{width: 300}}
 				renderInput={ (params) => <TextField {...params} label='Predmet' variant='outlined' /> }
 			/>
 		</div>

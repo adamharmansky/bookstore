@@ -3,10 +3,12 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	box-shadow: 0 0 1em #2E344080;
 }
 
-.NavBarButton { padding: 1em 0.5em 1em 0.5em;
-    text-decoration: none;
+.NavBarButton {
+	padding: 1em 0.5em 1em 0.5em;
+	text-decoration: none;
 }
 
 .NavBarButton:hover {
@@ -21,7 +23,7 @@
 	flex-direction: column;
 	justify-content: left;
 	font-size: 12pt;
-	color: #e5e9f0;
+	color: #2E3440;
 }
 
 a {
@@ -33,38 +35,38 @@ main {
 }
 
 .BooksHeading {
-    text-align: center;
+	text-align: center;
 }
 
 .BookList > p {
-    text-align:center; 
-    padding: 1em;
+	text-align:center; 
+	padding: 1em;
 }
 
 .SearchForm {
-    text-align: center;
+	text-align: center;
 }
 
 form {
-    padding: 1em;
+	padding: 1em;
 }
 
 form > input[type=text] {
-    padding: 0.4rem;
-    width: 250px;
-    height: 15px;
-    font-size: 1em;
+	padding: 0.4rem;
+	width: 250px;
+	height: 15px;
+	font-size: 1em;
 
-    padding-left: 40px;
-    background-color: #4C566A;
-    border-color: #3B4252;
-    border: 2px;
-    border-radius: 5px;
-    background-image: url('../public/search.png');
-    background-position: 0.5em;
-    background-size: 1em;
-    background-repeat: no-repeat;
-    color: #E5E9F0;
+	padding-left: 40px;
+	background-color: #D8DEE9;
+	border-color: #4C566A;
+	border: 2px;
+	border-radius: 5px;
+	background-image: url('../public/search.png');
+	background-position: 0.5em;
+	background-size: 1em;
+	background-repeat: no-repeat;
+	color: #2E3440;
 }
 
 .BookListItem {
@@ -73,11 +75,11 @@ form > input[type=text] {
 	justify-content: left;
 	margin: 0.5em 0 0.5em 0;
 	padding: 1em;
-	background-color: #3b4252;
+	background-color: #D8DEE9;
 	border-radius: 5px;
-	color: #e5e9f0;
+	color: #2E3440;
 	text-decoration: none;
-    
+	
 	/* centering */
 	max-width: 1200px;
 	margin-left: auto;
@@ -85,14 +87,14 @@ form > input[type=text] {
 }
 
 .BookListItemImage {
-    width: 200px;
-    object-fit: contain;
+	width: 200px;
+	object-fit: contain;
 }
 
 @media(max-width: 800px) {
-    .BookListItemImage {
-        width: 26%; 
-    }
+	.BookListItemImage {
+		width: 26%; 
+	}
 }
 
 .BookListItemBlock {
@@ -113,26 +115,26 @@ form > input[type=text] {
 }
 
 .pageNumbers {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
 }
 
 .currentPageNumber {
-    text-decoration: none;
-    padding: 0.5em;
-    margin: 0 0.1em 0 0.1em;
-    background-color: #4C566A;
-    border-radius: 5px;
+	text-decoration: none;
+	padding: 0.5em;
+	margin: 0 0.1em 0 0.1em;
+	background-color: #D8DEE9;
+	border-radius: 5px;
 }
 
 .pageNumber {
-    text-decoration: none;
-    padding: 0.5em;
-    margin: 0 0.1em 0 0.1em;
-    background-color: #434C5E;
-    border-radius: 5px;
+	text-decoration: none;
+	padding: 0.5em;
+	margin: 0 0.1em 0 0.1em;
+	background-color: #D8DEE9;
+	border-radius: 5px;
 }
 
 
@@ -140,13 +142,13 @@ form > input[type=text] {
 /* BookPage section */
 
 h1, h2 {
-    margin: 0.5em 0;
+	margin: 0.5em 0;
 }
 
 .BookPageContainer {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .BookPageTitle, .BookPageAuthor
@@ -154,26 +156,26 @@ h1, h2 {
 }
 
 .BookPageText {
-    display: flex;
-    flex-wrap: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 .BookPageLeft {
-    width: 30%;
+	width: 30%;
 }
 
 .BookPageRight {
-    max-width: 70%;
+	max-width: 70%;
 }
 
 .BookPageRight {
 }
 
 .BookPageImage {
-    display: block;
-    padding: 1em;
-    background-color: #3b4252;
-    margin: 1em 0;
-    border-radius: 20px;
-    max-width: calc(100%-3em);
+	display: block;
+	padding: 1em;
+	background-color: #D8DEE9;
+	margin: 1em 0;
+	border-radius: 20px;
+	max-width: calc(100%-3em);
 }
