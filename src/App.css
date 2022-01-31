@@ -84,7 +84,7 @@ form > input[type=text] {
 	text-decoration: none;
 	background-color: #e7eaf0;
 
-	/* border: 2px solid lightgray; */
+	border: none;
 	
 	/* centering */
 	max-width: 1200px;
