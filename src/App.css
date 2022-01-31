@@ -140,8 +140,7 @@ form > input[type=text] {
 /* BookPage section */
 
 h1, h2 {
-    margin: 0;
-    margin-bottom: 0.5em;
+    margin: 0.5em 0;
 }
 
 .BookPageContainer {
