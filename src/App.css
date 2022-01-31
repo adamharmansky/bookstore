@@ -139,15 +139,23 @@ form > input[type=text] {
 
 /* BookPage section */
 
-.BookPageInfo {
+.BookPageContainer {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.BookPageText {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.BookPageLeft {
+    width: 30%
+}
+
 .BookPageImage {
     display: block;
-    height: 300px;
     padding: 1em;
     background-color: #3b4252;
     margin: 2em auto;
