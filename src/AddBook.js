@@ -4,28 +4,32 @@ import './App.css'
 
 const config = require('./config')
 
-function handleSubmit (title, author) {
-	Axios.post(config.apiUrl + 'book/new/', {
-		title: title,
-		author: author
-	}).then((response) => {
-		console.log(response)
-	})
-}
-
 export default function AddBook() {
-	const [title, setTitle] = React.useState("")
-	const [author, setAuthor] = React.useState("")
+	const [form, setForm] = React.useState({
+		title: "",
+		author: ""
+	})
+
+	function handleSubmit (e) {
+		Axios.post(config.apiUrl + 'book/new/', form).then((response) => {
+			console.log(response)
+		})
+	}
+
+	function handleChange(e) {
+		setForm({...form, [e.target.name]: e.target.value})
+	}
+
 
 	return (
-		<form onSubmit={handleSubmit(title, author)}>
+		<form onSubmit={handleSubmit}>
 			<label>
 				Názov knihy:
-				<input type="text" value={title} />
+				<input type="text" value={form.title} onChange={handleChange} />
 			</label>
 			<label>
 				Meno autora:
-				<input type="text" value={author} />
+				<input type="text" value={form.author} onChange={handleChange} />
 			</label>
 		</form>
 	)
