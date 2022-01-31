@@ -15,17 +15,16 @@ export default function AddBook() {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<input
-				type="text"
+		<div className='AddBookForm'>
+			<input type="text"
 				name="title"
 				onChange={(e)=>{setTitle(e.target.value)}}
 			/>
-			<input
-				type="text"
+			<input type="text"
 				name="author"
 				onChange={(e)=>{setAuthor(e.target.value)}}
 			/>
-		</form>
+			<button onPress={handleSubmit}> Pridať </button>
+		</div>
 	)
 }
