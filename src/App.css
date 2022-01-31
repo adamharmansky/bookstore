@@ -145,12 +145,11 @@ form > input[type=text] {
     margin-right: auto;
 }
 
-.BookPageTitle,
-.BookPageAuthor
+.BookPageTitle, .BookPageAuthor
 {
-    padding: 0.25em;
-    margin: 0.25em;
-    border-radius: 5px;
+    padding: 0.25em !important;
+    margin: 0.25em !important;
+    border-radius: 8px;
     background-color: #3b4252;
 }
 
