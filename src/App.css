@@ -82,6 +82,9 @@ form > input[type=text] {
 	border-radius: 5px;
 	color: #202020;
 	text-decoration: none;
+    background-color: ghostwhite;
+
+    border: 2px solid lightgray;
 	
 	/* centering */
 	max-width: 1200px;
