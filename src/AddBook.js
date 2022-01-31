@@ -25,11 +25,11 @@ export default function AddBook() {
 		<form onSubmit={handleSubmit}>
 			<label>
 				Názov knihy:
-				<input type="text" value={form.title} onChange={handleChange} />
+				<input name="title" type="text" value={form.title} onChange={handleChange} />
 			</label>
 			<label>
 				Meno autora:
-				<input type="text" value={form.author} onChange={handleChange} />
+				<input name="author" type="text" value={form.author} onChange={handleChange} />
 			</label>
 		</form>
 	)
