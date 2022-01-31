@@ -32,10 +32,6 @@ main {
 	margin: 1em;
 }
 
-h1 {
-    text-align: center;
-}
-
 .BookList > p {
     text-align:center; 
     padding: 1em;
@@ -145,6 +141,15 @@ form > input[type=text] {
     margin-right: auto;
 }
 
+.BookPageTitle
+.BookPageAuthor
+{
+    padding: 0.25em;
+    margin: 0.25em;
+    border-radius: 5px;
+    background-color: #3b4252;
+}
+
 .BookPageText {
     display: flex;
     flex-wrap: nowrap;
@@ -154,10 +159,15 @@ form > input[type=text] {
     width: 30%
 }
 
+.BookPageRight {
+    margin-left: auto
+}
+
 .BookPageImage {
     display: block;
     padding: 1em;
     background-color: #3b4252;
     margin: 2em auto;
     border-radius: 20px;
+    max-width: 100%
 }
