@@ -27,8 +27,8 @@ export default function BookPage() {
 
 	return (
 		<div className="BookPageContainer">
-            <h1> {bookData.title} </h1>
-            <i> {bookData.author} </i>
+            <h1 className="BookPageTitle"> {bookData.title} </h1>
+            <h2 className="BookPageAuthor"> {bookData.author} </h2>
             <div className="BookPageText">
                 <div className="BookPageLeft">
                     <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />

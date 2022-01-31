@@ -40,7 +40,7 @@ export default function BookList() {
 	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>)
 	return (
 		<div>
-			<h1> Knihy </h1>
+			<h1 className="BooksHeading"> Knihy </h1>
 			<form className="SearchForm" name="search_form">
 					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={query}/>
 			</form>
