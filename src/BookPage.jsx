@@ -49,10 +49,6 @@ export default function BookPage() {
                     <h2>KĽÚČOVÉ SLOVÁ</h2>
                     <p2>{bookData.keywords}</p2>
                 </div>
-                <center>
-                    <p>{bookData.year_pub}, {bookData.pages} strán, {bookData.read_time}, {bookData.lang}, {bookData.subject}</p>
-                </center>
-                <p> {bookData.desc} </p>
             </div>
 		</div>
 	)
