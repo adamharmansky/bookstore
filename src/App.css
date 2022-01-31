@@ -84,7 +84,7 @@ form > input[type=text] {
 	text-decoration: none;
 	background-color: #e7eaf0;
 
-	border: 2px solid lightgray;
+	/* border: 2px solid lightgray; */
 	
 	/* centering */
 	max-width: 1200px;
@@ -155,8 +155,10 @@ h1, h2 {
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 1em;
-	border-radius: 10px;
+	background-color: ghostwhite;
+	padding: 2em;
+	border: 3px solid lightgray;
+	border-radius: 15px;
 }
 
 .BookPageTitle, .BookPageAuthor
@@ -185,5 +187,6 @@ h1, h2 {
 	background-color: #dee1e6;
 	margin: 1em 0;
 	border-radius: 20px;
+	border: 2px solid lightgray;
 	max-width: calc(100%-3em);
 }
