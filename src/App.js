@@ -4,6 +4,7 @@ import './App.css'
 import BookList from './BookList'
 import MainPage from './MainPage'
 import BookPage from './BookPage'
+import AddBook from './AddBook'
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 						<Route path='/' element={<MainPage />} />
 						<Route path='/list' element={<BookList />} />
 						<Route path='/book/*' element={<BookPage />} />
+						<Route path='/add' element={<AddBook />} />
 					</Routes>
 				</Router>
 			</main>
