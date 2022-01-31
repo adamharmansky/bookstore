@@ -147,10 +147,6 @@ form > input[type=text] {
 
 .BookPageTitle, .BookPageAuthor
 {
-    padding: 0.25em !important;
-    margin: 0.25em !important;
-    border-radius: 8px;
-    background-color: #3b4252;
 }
 
 .BookPageText {
