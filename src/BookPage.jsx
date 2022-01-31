@@ -3,17 +3,17 @@ import Axios from 'axios'
 import './App.css'
 
 const config = require('./config')
-const cssData = {
-    "mat": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "mat_bgnd.png" },
-    "fyz": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "fyz_bgnd.png" },
-    "che": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "che_bgnd.png" },
-    "bio": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "bio_bgnd.png" },
-    "geo": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "geo_bgnd.png" },
-    "sjl": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "sjl_bgnd.png" },
-    "dej": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "dej_bgnd.png" },
-    "obn": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "obn_bgnd.png" },
-    "eko": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "eko_bgnd.png" }
-}
+// const cssData = {
+//     "mat": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "mat_bgnd.png" },
+//     "fyz": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "fyz_bgnd.png" },
+//     "che": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "che_bgnd.png" },
+//     "bio": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "bio_bgnd.png" },
+//     "geo": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "geo_bgnd.png" },
+//     "sjl": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "sjl_bgnd.png" },
+//     "dej": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "dej_bgnd.png" },
+//     "obn": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "obn_bgnd.png" },
+//     "eko": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "eko_bgnd.png" }
+// }
 
 export default function BookPage() {
  	const [bookData, setBookData] = React.useState([])
