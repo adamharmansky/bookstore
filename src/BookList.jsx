@@ -56,7 +56,7 @@ export default function BookList() {
 					const authors = [];
 
 					for (let i = 0; i < value.authors.length; i++) {
-						authors.push(<a className="BookPageAuthor" href={"/author/"+value.authors[i].author_id}>{value.authors[i].author_name}</a>);
+						authors.push(<span><a className="BookPageAuthor" href={"/author/"+value.authors[i].author_id}>{value.authors[i].author_name}</a>; </span>);
 					}
 
 					return (
