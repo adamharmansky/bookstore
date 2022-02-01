@@ -3,17 +3,24 @@ import Axios from 'axios'
 import './App.css'
 
 const config = require('./config')
-// const cssData = {
-//     "mat": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "mat_bgnd.png" },
-//     "fyz": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "fyz_bgnd.png" },
-//     "che": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "che_bgnd.png" },
-//     "bio": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "bio_bgnd.png" },
-//     "geo": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "geo_bgnd.png" },
-//     "sjl": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "sjl_bgnd.png" },
-//     "dej": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "dej_bgnd.png" },
-//     "obn": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "obn_bgnd.png" },
-//     "eko": { "mainColor": "#ffffff", "secColor": "#fffffa", "tertColor": "#fffff0", "backgnd": "eko_bgnd.png" }
-// }
+/* {
+      isbn: int,
+      title: string,
+      subject: {
+            name: string,
+            colors: [string, string, string],
+            bg: string,
+      }
+      keywords: string,
+      authors: [{ id: int, name: string, }, ...],
+      desc: string,
+      read_time: int,
+      pages: int,
+      year_pub: int,
+      lang: { id: int, name: string, },
+      image: string,
+      content: string
+} */
 
 export default function BookPage() {
  	const [bookData, setBookData] = React.useState([])
@@ -25,10 +32,23 @@ export default function BookPage() {
 		})
 	}, [])
 
+    const authors = [];
+
+    for (const author in bookData.authors) {
+        authors.push(<a className="BookPageAuthor" href={"/author/"+author.id}>{author.name}</a>);
+    }
+
+    const style = {
+        "--subject-pri-clr": bookData.subject.colors[0],
+        "--subject-sec-clr": bookData.subject.colors[1],
+        "--subject-ter-clr": bookData.subject.colors[2],
+        "--subject-bg": bookData.subject.bg
+    }
+
 	return (
-		<div className="BookPageContainer">
+		<div className="BookPageContainer" style={style}>
             <h1 className="BookPageTitle"> {bookData.title} </h1>
-            <h2 className="BookPageAuthor"> {bookData.author} </h2>
+            <h2 className="BookPageAuthors"> {authors} </h2>
             <div className="BookPageText">
                 <div className="BookPageLeft">
                     <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
@@ -43,9 +63,10 @@ export default function BookPage() {
                         Priemerný čas čítania: {bookData.read_time} <br/>
                         Počet strán: {bookData.pages} <br/>
                         Rok vydania: {bookData.year_pub} <br/>
+                        ISBN: {bookData.isbn}
                     </span>
                     <h2>ÚRYVOK</h2>
-                    <p>{bookData.sample}</p>
+                    <p>{bookData.sample ? bookData.sample : "Chýbajúci úryvok"}</p>
                     <h2>KĽÚČOVÉ SLOVÁ</h2>
                     <p2>{bookData.keywords}</p2>
                 </div>
