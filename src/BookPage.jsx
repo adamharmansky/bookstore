@@ -6,11 +6,9 @@ const config = require('./config')
 /* {
       isbn: int,
       title: string,
-      subject: {
-            name: string,
-            colors: [string, string, string],
-            bg: string,
-      }
+      subject_name: string,
+      subject_colors: [string, string, string],
+      subject_bg: string,
       keywords: string,
       authors: [{ id: int, name: string, }, ...],
       desc: string,
@@ -39,10 +37,10 @@ export default function BookPage() {
     }
 
     const style = {
-        "--subject-pri-clr": bookData.subject.colors[0],
-        "--subject-sec-clr": bookData.subject.colors[1],
-        "--subject-ter-clr": bookData.subject.colors[2],
-        "--subject-bg": bookData.subject.bg
+        "--subject-pri-clr": bookData.subject_color0,
+        "--subject-sec-clr": bookData.subject_color1,
+        "--subject-ter-clr": bookData.subject_color2,
+        "--subject-bg": bookData.subject_background
     }
 
 	return (
