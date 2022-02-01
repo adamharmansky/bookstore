@@ -65,7 +65,7 @@ export default function BookList() {
 								<div className='BookListItemBlock'>
 									<div className='BookListItemTitle'> {value.title} </div>
 									<div className='BookListItemInfo'>
-										{authors}; {value.year_pub}, {value.pages} strán, {minutesToReadableTime(value.read_time)}, {value.lang_name}, {value.subject_name}
+										{authors}{value.year_pub}, {value.pages} strán, {minutesToReadableTime(value.read_time)}, {value.lang_name}, {value.subject_name}
 									</div>
 									<p className='BookListDescription'> {value.desc ? value.desc.slice(0,360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
 								</div>
