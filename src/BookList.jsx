@@ -17,7 +17,7 @@ function get_page() {
 }
 
 function minutesToReadableTime(minutes) {
-    return (Math.floor(minutes)/60+"h "+minutes%60+"m")
+    return (Math.floor(minutes/60)+"h "+minutes%60+"m")
 }
 
 export default function BookList() {
