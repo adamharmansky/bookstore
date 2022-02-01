@@ -22,7 +22,7 @@ const config = require('./config')
 } */
 
 export default function BookPage() {
- 	const [bookData, setBookData] = React.useState([])
+ 	const [bookData, setBookData] = React.useState({})
 
 	React.useEffect(() => {
 		Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
