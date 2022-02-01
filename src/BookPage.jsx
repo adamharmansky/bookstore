@@ -22,7 +22,7 @@ const config = require('./config')
 } */
 
 export default function BookPage() {
- 	const [bookData, setBookData] = React.useState({})
+ 	const [bookData, setBookData] = React.useState([])
 
 	React.useEffect(() => {
 		Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
@@ -33,8 +33,10 @@ export default function BookPage() {
 
 	const authors = [];
 
-	for (let i = 0; i < bookData.authors.length; i++) {
-		authors.push(<a className="BookPageAuthor" href={"/author/"+bookData.authors[i].author_id}>{bookData.authors[i].author_name}</a>);
+	if (bookData.authors) {
+		for (let i = 0; i < bookData.authors.length; i++) {
+			authors.push(<a className="BookPageAuthor" href={"/author/"+bookData.authors[i].author_id}>{bookData.authors[i].author_name}</a>);
+		}
 	}
 
 	const style = {
