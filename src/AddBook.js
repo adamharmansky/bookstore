@@ -18,7 +18,7 @@ export default function AddBook() {
 	const [yearPub, setYearPub] = React.useState(0)
 	const [lang, setLang] = React.useState("")
 	const [isbn, setIsbn] = React.useState(0)
-	const [image, setImage] = React.useState("")
+	// const [image, setImage] = React.useState("")
 	const [subjects, setSubjects] = React.useState([])
 
 	React.useEffect(() => {
@@ -44,7 +44,7 @@ export default function AddBook() {
 			year_pub: yearPub,
 			lang: lang,
 			isbn: isbn,
-			image: image
+			// image: image
 
 		}).then((response) => {
 			console.log(response)
