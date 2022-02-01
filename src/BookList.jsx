@@ -17,7 +17,7 @@ function get_page() {
 }
 
 function minutesToReadableTime(minutes) {
-    return (Math.floor(minutes/60)+"h "+minutes%60+"m")
+	return (Math.floor(minutes/60)+"h "+minutes%60+"m")
 }
 
 export default function BookList() {
@@ -35,7 +35,7 @@ export default function BookList() {
 
 	const thisPageUrl = new URL('/book/', window.location.href)
 	
-    const pageNumbers = [];
+	const pageNumbers = [];
 	const current_page = parseInt(get_page())
 	const query = get_query()
 
@@ -53,11 +53,11 @@ export default function BookList() {
 			</form>
 			<div className='BookList'>
 				{bookList.map((value, key) => {
-                    const authors = [];
+					const authors = [];
 
-                    for (let i = 0; i < value.authors.length; i++) {
-                        authors.push(<a className="BookPageAuthor" href={"/author/"+value.authors[i].author_id}>{value.authors[i].author_name}</a>);
-                    }
+					for (let i = 0; i < value.authors.length; i++) {
+						authors.push(<a className="BookPageAuthor" href={"/author/"+value.authors[i].author_id}>{value.authors[i].author_name}</a>);
+					}
 
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
