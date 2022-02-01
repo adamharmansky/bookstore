@@ -52,7 +52,7 @@ export default function BookPage() {
                 <div className="BookPageLeft">
                     <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
                     <h2>OBSAH</h2>
-                    <p className="BookPageContent">{bookData.content ? bookData.content : "Chýbajúci obsah"}</p>
+                    <p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replace(";","\n") : "Chýbajúci obsah"}</p>
                 </div>
 
                 <div className="BookPageRight">
