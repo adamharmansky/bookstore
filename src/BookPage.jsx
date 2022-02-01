@@ -15,7 +15,8 @@ const config = require('./config')
       read_time: int,
       pages: int,
       year_pub: int,
-      lang: { id: int, name: string, },
+      lang_id: int,
+      lang_name: string,
       image: string,
       content: string
 } */
@@ -33,7 +34,7 @@ export default function BookPage() {
     const authors = [];
 
     for (const author in bookData.authors) {
-        authors.push(<a className="BookPageAuthor" href={"/author/"+author.id}>{author.name}</a>);
+        authors.push(<a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>);
     }
 
     const style = {
