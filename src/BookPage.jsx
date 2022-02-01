@@ -15,7 +15,8 @@ const config = require('./config')
       read_time: int,
       pages: int,
       year_pub: int,
-      lang: { id: int, name: string, },
+      lang_id: int,
+      lang_name: string,
       image: string,
       content: string
 } */
