@@ -4,21 +4,21 @@ import './App.css'
 
 const config = require('./config')
 /* {
-      isbn: int,
-      title: string,
-      subject_name: string,
-      subject_colors: [string, string, string],
-      subject_bg: string,
-      keywords: string,
-      authors: [{ id: int, name: string, }, ...],
-      desc: string,
-      read_time: int,
-      pages: int,
-      year_pub: int,
-      lang_id: int,
-      lang_name: string,
-      image: string,
-      content: string
+	  isbn: int,
+	  title: string,
+	  subject_name: string,
+	  subject_colors: [string, string, string],
+	  subject_bg: string,
+	  keywords: string,
+	  authors: [{ id: int, name: string, }, ...],
+	  desc: string,
+	  read_time: int,
+	  pages: int,
+	  year_pub: int,
+	  lang_id: int,
+	  lang_name: string,
+	  image: string,
+	  content: string
 } */
 
 export default function BookPage() {
@@ -27,22 +27,24 @@ export default function BookPage() {
 	React.useEffect(() => {
 		Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
 			console.log(data)
-			setBookData(data.data[0])
+			setBookData(data.data)
 		})
 	}, [])
 
-    const authors = [];
+	const authors = [];
 
-    for (let i = 0; i < bookData.authors.length; i++) {
-        authors.push(<a className="BookPageAuthor" href={"/author/"+bookData.authors[i].author_id}>{bookData.authors[i].author_name}</a>);
-    }
+	if (bookData.authors) {
+		for (let i = 0; i < bookData.authors.length; i++) {
+			authors.push(<a className="BookPageAuthor" href={"/author/"+bookData.authors[i].author_id}>{bookData.authors[i].author_name}</a>);
+		}
+	}
 
-    const style = {
-        "--subject-pri-clr": bookData.subject_color0,
-        "--subject-sec-clr": bookData.subject_color1,
-        "--subject-ter-clr": bookData.subject_color2,
-        "--subject-bg": bookData.subject_background
-    }
+	const style = {
+		"--subject-pri-clr": bookData.subject_color0,
+		"--subject-sec-clr": bookData.subject_color1,
+		"--subject-ter-clr": bookData.subject_color2,
+		"--subject-bg": bookData.subject_background
+	}
 
 	return (
 		<div className="BookPageContainer" style={style}>
@@ -54,22 +56,21 @@ export default function BookPage() {
                     <h2>OBSAH</h2>
                     <p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replace(";","\n") : "Chýbajúci obsah"}</p>
                 </div>
-
-                <div className="BookPageRight">
-                    <h2>O KNIHE</h2>
-                    <p>{bookData.desc}</p>
-                    <span className="BookPageInfo">
-                        Priemerný čas čítania: {bookData.read_time} <br/>
-                        Počet strán: {bookData.pages} <br/>
-                        Rok vydania: {bookData.year_pub} <br/>
-                        ISBN: {bookData.isbn}
-                    </span>
-                    <h2>ÚRYVOK</h2>
-                    <p>{bookData.sample ? bookData.sample : "Chýbajúci úryvok"}</p>
-                    <h2>KĽÚČOVÉ SLOVÁ</h2>
-                    <p2>{bookData.keywords}</p2>
-                </div>
-            </div>
+				<div className="BookPageRight">
+					<h2>O KNIHE</h2>
+					<p>{bookData.desc}</p>
+					<span className="BookPageInfo">
+						Priemerný čas čítania: {bookData.read_time} <br/>
+						Počet strán: {bookData.pages} <br/>
+						Rok vydania: {bookData.year_pub} <br/>
+						ISBN: {bookData.isbn}
+					</span>
+					<h2>ÚRYVOK</h2>
+					<p>{bookData.sample ? bookData.sample : "Chýbajúci úryvok"}</p>
+					<h2>KĽÚČOVÉ SLOVÁ</h2>
+					<p2>{bookData.keywords}</p2>
+				</div>
+			</div>
 		</div>
 	)
 }
