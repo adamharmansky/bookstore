@@ -48,15 +48,14 @@ export default function BookPage() {
 
 	return (
 		<div className="BookPageContainer" style={style}>
-			<h1 className="BookPageTitle"> {bookData.title} </h1>
-			<h2 className="BookPageAuthors"> {authors} </h2>
-			<div className="BookPageText">
-				<div className="BookPageLeft">
-					<img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
-					<h2>OBSAH</h2>
-					<p className="BookPageContent">{bookData.content ? bookData.content : "Chýbajúci obsah"}</p>
-				</div>
-
+            <h1 className="BookPageTitle"> {bookData.title} </h1>
+            <h2 className="BookPageAuthors"> {authors} </h2>
+            <div className="BookPageText">
+                <div className="BookPageLeft">
+                    <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
+                    <h2>OBSAH</h2>
+                    <p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replaceAll(/;\s*/gi,"\n") : "Chýbajúci obsah"}</p>
+                </div>
 				<div className="BookPageRight">
 					<h2>O KNIHE</h2>
 					<p>{bookData.desc}</p>
