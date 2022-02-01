@@ -16,6 +16,10 @@ function get_page() {
 	else return 0
 }
 
+function minutesToReadableTime(minutes) {
+    return (minutes/60+"h "+minutes%60+"m")
+}
+
 export default function BookList() {
 	var [bookList, setBookList] = React.useState([])
 	var [pageCount, setPageCount] = React.useState(0)
@@ -30,14 +34,17 @@ export default function BookList() {
 	}, [])
 
 	const thisPageUrl = new URL('/book/', window.location.href)
-	const pageNumbers = [];
+	
+    const pageNumbers = [];
 	const current_page = parseInt(get_page())
 	const query = get_query()
+
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>)
 	for (let i = 0; i < pageCount; i++) {
 		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(query?"&q="+query:"")}>{i}</a>)
 	}
 	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>)
+
 	return (
 		<div>
 			<h1 className="BooksHeading"> Knihy </h1>
@@ -46,13 +53,19 @@ export default function BookList() {
 			</form>
 			<div className='BookList'>
 				{bookList.map((value, key) => {
+                    const authors = [];
+
+                    for (const author in value.authors) {
+                        authors.push(<a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>);
+                    }
+
 					return (
 						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
 								<div className='BookListItemBlock'>
 									<div className='BookListItemTitle'> {value.title} </div>
 									<div className='BookListItemInfo'>
-										{value.author}, {value.publisher ? value.publisher : "Neznáme vydavateľstvo"}, {value.year_pub}, {value.pages} strán, {value.read_time}, {value.lang}, {value.subject}
+										{authors}; {value.year_pub}, {value.pages} strán, {minutesToReadableTime(value.read_time)}, {value.lang.name}, {value.subject_name}
 									</div>
 									<p className='BookListDescription'> {value.desc ? value.desc.slice(0,360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
 								</div>
