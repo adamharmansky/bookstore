@@ -4,25 +4,25 @@ import './App.css'
 
 const config = require('./config')
 /* {
-	  isbn: int,
-	  title: string,
-	  subject_name: string,
-	  subject_colors: [string, string, string],
-	  subject_bg: string,
-	  keywords: string,
-	  authors: [{ id: int, name: string, }, ...],
-	  desc: string,
-	  read_time: int,
-	  pages: int,
-	  year_pub: int,
-	  lang_id: int,
-	  lang_name: string,
-	  image: string,
-	  content: string
+	isbn: int,
+	title: string,
+	subject_name: string,
+	subject_colors: [string, string, string],
+	subject_bg: string,
+	keywords: string,
+	authors: [{ id: int, name: string, }, ...],
+	desc: string,
+	read_time: int,
+	pages: int,
+	year_pub: int,
+	lang_id: int,
+	lang_name: string,
+	image: string,
+	content: string
 } */
 
 export default function BookPage() {
- 	const [bookData, setBookData] = React.useState([]);
+	const [bookData, setBookData] = React.useState([]);
 
 	React.useEffect(() => {
 		Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
@@ -40,20 +40,20 @@ export default function BookPage() {
 
 	return (
 		<div className="BookPageContainer" style={style}>
-            <h1 className="BookPageTitle"> {bookData.title} </h1>
-            <h2 className="BookPageAuthors">
-                {
-                    bookData.authors ? bookData.authors.map((author) => {
-                        return(<span><a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>; </span>);
-                    }) : null
-                }
-            </h2>
-            <div className="BookPageText">
-                <div className="BookPageLeft">
-                    <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
-                    <h2>OBSAH</h2>
-                    <p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replaceAll(/;\s*/gi,"\n") : "Chýbajúci obsah"}</p>
-                </div>
+			<h1 className="BookPageTitle"> {bookData.title} </h1>
+			<h2 className="BookPageAuthors">
+				{
+					bookData.authors ? bookData.authors.map((author, i) => {
+						return(<span><a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>{i<bookData.authors.length-1?";":""}</span>);
+					}) : null
+				}
+			</h2>
+			<div className="BookPageText">
+				<div className="BookPageLeft">
+					<img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
+					<h2>OBSAH</h2>
+					<p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replaceAll(/;\s*/gi,"\n") : "Chýbajúci obsah"}</p>
+				</div>
 				<div className="BookPageRight">
 					<h2>O KNIHE</h2>
 					<p>{bookData.desc}</p>
