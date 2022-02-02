@@ -33,11 +33,9 @@ export default function BookPage() {
 
 	const authors = [];
 
-	if (bookData.authors) {
-		for (let i = 0; i < bookData.authors.length; i++) {
-			authors.push(<a className="BookPageAuthor" href={"/author/"+bookData.authors[i].author_id}>{bookData.authors[i].author_name}</a>);
-		}
-	}
+    for (let i = 0; i < value.authors.length; i++) {
+        authors.push(<span><a className="BookPageAuthor" href={"/author/"+value.authors[i].author_id}>{value.authors[i].author_name}</a>; </span>);
+    }
 
 	const style = {
 		"--subject-pri-clr": bookData.subject_color0,
