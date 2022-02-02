@@ -14,3 +14,4 @@ Momentálne na [https://bookstore.harmansky.xyz](https://bookstore.harmansky.xyz
  - [ ] Sorting by subjects
  - [ ] Fancy main page
    - [ ] Something interactive so the page is original
+ - Change all widgets to standard Material UI (instead of the html things)
