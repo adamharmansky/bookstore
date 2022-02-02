@@ -33,8 +33,6 @@ export default function BookList() {
 		})
 	}, [])
 
-	const thisPageUrl = new URL('/book/', window.location.href)
-	
 	const pageNumbers = [];
 	const current_page = parseInt(get_page())
 	const query = get_query()
@@ -60,7 +58,7 @@ export default function BookList() {
 					}
 
 					return (
-						<a className='BookListItem' href={thisPageUrl.href + value.isbn}>
+						<a className='BookListItem' href={'/book/' + value.isbn}>
 								<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
 								<div className='BookListItemBlock'>
 									<div className='BookListItemTitle'> {value.title} </div>

@@ -192,3 +192,27 @@ h1, h2 {
 	/* border: 2px solid lightgray; */
 	max-width: calc(100%-3em);
 }
+
+.AuthorListItem {
+	/* display: flex;
+	 * flex-direction: row;
+	 * justify-content: left;
+	 */
+	margin: 0.7em 0 0.7em 0;
+	padding: 1em;
+	border-color: #dee1e6;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+	color: #202020;
+	text-decoration: none;
+	background-color: #e7eaf040;
+	/* box-shadow: 0 0 0.3em #00000050; */
+
+	border: none;
+	
+	/* centering */
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
