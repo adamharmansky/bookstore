@@ -32,11 +32,11 @@ export default function AuthorList() {
 	const current_page = parseInt(get_page())
 	const query = get_query()
 
-	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>)
+	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/authors?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>)
 	for (let i = 0; i < pageCount; i++) {
-		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(query?"&q="+query:"")}>{i}</a>)
+		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/authors?page="+i+(query?"&q="+query:"")}>{i}</a>)
 	}
-	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>)
+	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/authors?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>)
 
 	return (
 		<div>
