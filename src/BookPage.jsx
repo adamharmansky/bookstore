@@ -31,12 +31,6 @@ export default function BookPage() {
 		})
 	}, [])
 
-	const authors = [];
-
-    for (let i = 0; i < bookData.authors.length; i++) {
-        authors.push(<span><a className="BookPageAuthor" href={"/author/"+bookData.authors[i].author_id}>{bookData.authors[i].author_name}</a>; </span>);
-    }
-
 	const style = {
 		"--subject-pri-clr": bookData.subject_color0,
 		"--subject-sec-clr": bookData.subject_color1,
@@ -47,7 +41,13 @@ export default function BookPage() {
 	return (
 		<div className="BookPageContainer" style={style}>
             <h1 className="BookPageTitle"> {bookData.title} </h1>
-            <h2 className="BookPageAuthors"> {authors} </h2>
+            <h2 className="BookPageAuthors">
+                {
+                    bookData.authors ? bookData.authors.map((author) => {
+                        return(<span><a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>; </span>);
+                    }) : null
+                }
+            </h2>
             <div className="BookPageText">
                 <div className="BookPageLeft">
                     <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
