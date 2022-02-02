@@ -194,10 +194,9 @@ h1, h2 {
 }
 
 .AuthorListItem {
-	/* display: flex;
-	 * flex-direction: row;
-	 * justify-content: left;
-	 */
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
 	margin: 0.7em 0 0.7em 0;
 	padding: 1em;
 	border-color: #dee1e6;
