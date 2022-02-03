@@ -17,10 +17,10 @@ export default function BookList() {
 			setPageCount(data.data.pageCount);
 		})
 	}, []);
-
+	
 	const pageNumbers = [];
-	const current_page = parseInt(get_query('page'))
-	const query = get_query('q')
+	const current_page = parseInt(get_query('page'));
+	const query = get_query('q');
 
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>);
 	for (let i = 0; i < pageCount; i++) {
