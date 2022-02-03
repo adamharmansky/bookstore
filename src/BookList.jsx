@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import './App.css';
-import get_query from './Utility';
+import {get_query} from './Utility';
 
 const config = require('./config')
 
