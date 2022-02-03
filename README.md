@@ -11,7 +11,13 @@ Momentálne na [https://bookstore.harmansky.xyz](https://bookstore.harmansky.xyz
  - [ ] Indexing (more of a backend thing but the todo is here)
  - [x] Author list
    - [ ] Author page
- - [ ] Sorting by subjects
+    - Picture
+    - Quote
+    - etc.
+ - [ ] Sorting by subjects - subject page?
  - [ ] Fancy main page
    - [ ] Something interactive so the page is original
+   - [ ] Instagram post
+   - [ ] Subject books
+ - [ ] 'Add book' page
  - Change all widgets to standard Material UI (instead of the html things)
