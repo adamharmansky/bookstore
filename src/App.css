@@ -28,6 +28,7 @@
 
 a {
 	color: #81a1c9;
+	font-weight: normal;
 }
 
 main {
@@ -109,6 +110,9 @@ form > input[type=text] {
 @media(max-width: 800px) {
 	.BookListDescription {
 		display: none;
+	}
+	.BookPageContainer {
+		padding: 0.5em;
 	}
 }
 
