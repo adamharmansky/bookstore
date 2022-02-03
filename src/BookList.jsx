@@ -23,7 +23,7 @@ export default function BookList() {
     const current_page = page_text.length > 0 ? parseInt(page_text) : 0;
     const query = get_query("q");
 
-    // Adding page numbers to the bootom of the page
+    // Adding page numbers to the bottom of the page
     const pageNumbers = [];
 
     if (current_page > 0) {
@@ -59,18 +59,13 @@ export default function BookList() {
                 <input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={query} />
             </form>
             <div className="BookList">
-                {bookList.map((value) => {
-                    const authors = [];
 
+                {/* Mapping bookList values to the page */}
+                {bookList.map((value) => {
+
+                    const authors = [];
                     for (let i = 0; i < value.authors.length; i++) {
-                        authors.push(
-                            <span>
-                                <a className="BookPageAuthor" href={"/author/" + value.authors[i].author_id}>
-                                    {value.authors[i].author_name}
-                                </a>
-                                ;{" "}
-                            </span>
-                        );
+                        authors.push(<span> <a className="BookPageAuthor" href={"/author/" + value.authors[i].author_id}> {value.authors[i].author_name} </a>; </span>);
                     }
 
                     return (
@@ -78,15 +73,13 @@ export default function BookList() {
                             <img className="BookListItemImage" src={value.image ? value.image : "/reading.png"} alt="Chýbajúci obrázok"></img>
                             <div className="BookListItemBlock">
                                 <div className="BookListItemTitle"> {value.title} </div>
-                                <div className="BookListItemInfo">
-                                    {authors}
-                                    {value.year_pub}, {value.pages} strán, {minutesToReadableTime(value.read_time)}, {value.lang_name}, {value.subject_name}
-                                </div>
+                                <div className="BookListItemInfo"> {authors} {value.year_pub}, {value.pages} strán, {minutesToReadableTime(value.read_time)}, {value.lang_name}, {value.subject_name} </div>
                                 <p className="BookListDescription"> {value.desc ? value.desc.slice(0, 360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
                             </div>
                         </a>
                     );
                 })}
+
                 <p> {bookList.length === 0 ? "Neboli nájdené žiadne knihy" : ""} </p>
                 {pageCount > 1 ? <div className="pageNumbers"> {pageNumbers} </div> : []}
             </div>
