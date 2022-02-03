@@ -20,7 +20,7 @@ export default function AuthorPage() {
 	return (
 		<div className="AuthorPageContainer">
 			<h1 className="AuthorPageTitle"> {"Knihy od autora " + authorData.author_name} </h1>
-			{authorData.books.map((value) => {
+			{authorData.books ? authorData.books.map((value) => {
 				return (
 					<a className='BookListItem' href={'/book/' + value.isbn}>
 						<img className='BookListItemImage' src={value.image ? value.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
@@ -33,7 +33,7 @@ export default function AuthorPage() {
 						</div>
 					</a>
 				)
-			})}
+			}) : []}
 		</div>
 	)
 }
