@@ -23,7 +23,7 @@ export function bookList(books) {
             <a key={book.title} className='BookListItem' href={'/book/' + book.isbn}>
                     <img className='BookListItemImage' src={book.image ? book.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
                     <div className='BookListItemBlock'>
-                        <div className='BookListItemTitle'> {book.title} </div>
+                        <h3> {book.title} </h3>
                         <div className='BookListItemInfo'>
                             {authors}{book.year_pub}, {book.pages} strán, {minutesToReadableTime(book.read_time)}, {book.lang_name}, {book.subject_name}
                         </div>
