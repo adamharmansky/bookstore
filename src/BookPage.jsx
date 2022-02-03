@@ -6,53 +6,53 @@ import {minutesToReadableTime} from './Utility'
 const config = require('./config')
 
 export default function BookPage() {
-	const [bookData, setBookData] = React.useState([]);
+    const [bookData, setBookData] = React.useState([]);
 
-	React.useEffect(() => {
-		Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
-			console.log(data)
-			setBookData(data.data)
-		})
-	}, []);
+    React.useEffect(() => {
+        Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
+            console.log(data)
+            setBookData(data.data)
+        })
+    }, []);
 
-	const style = {
-		"--subject-pri-clr": bookData.subject_color0,
-		"--subject-sec-clr": bookData.subject_color1,
-		"--subject-ter-clr": bookData.subject_color2,
-		"--subject-bg": bookData.subject_background
-	};
+    const style = {
+        "--subject-pri-clr": bookData.subject_color0,
+        "--subject-sec-clr": bookData.subject_color1,
+        "--subject-ter-clr": bookData.subject_color2,
+        "--subject-bg": bookData.subject_background
+    };
 
-	return (
-		<div className="BookPageContainer" style={style}>
-			<h1 className="BookPageTitle"> {bookData.title} </h1>
-			<h2 className="BookPageAuthors">
-				{
-					bookData.authors ? bookData.authors.map((author, i) => {
-						return(<span><a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>{i<bookData.authors.length-1?";":""}</span>);
-					}) : null
-				}
-			</h2>
-			<div className="BookPageText">
-				<div className="BookPageLeft">
-					<img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
-					<h2>OBSAH</h2>
-					<p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replaceAll(/;\s*/gi,"\n") : "Chýbajúci obsah"}</p>
-				</div>
-				<div className="BookPageRight">
-					<h2>O KNIHE</h2>
-					<p>{bookData.desc}</p>
-					<span className="BookPageInfo">
-						Priemerný čas čítania: {minutesToReadableTime(bookData.read_time)} <br/>
-						Počet strán: {bookData.pages} <br/>
-						Rok vydania: {bookData.year_pub} <br/>
-						ISBN: {bookData.isbn}
-					</span>
-					<h2>ÚRYVOK</h2>
-					<p>{bookData.sample ? bookData.sample : "Chýbajúci úryvok"}</p>
-					<h2>KĽÚČOVÉ SLOVÁ</h2>
-					<p2>{bookData.keywords}</p2>
-				</div>
-			</div>
-		</div>
-	);
+    return (
+        <div className="BookPageContainer" style={style}>
+            <h1 className="BookPageTitle"> {bookData.title} </h1>
+            <h2 className="BookPageAuthors">
+                {
+                    bookData.authors ? bookData.authors.map((author, i) => {
+                        return(<span><a className="BookPageAuthor" href={"/author/"+author.author_id}>{author.author_name}</a>{i<bookData.authors.length-1?";":""}</span>);
+                    }) : null
+                }
+            </h2>
+            <div className="BookPageText">
+                <div className="BookPageLeft">
+                    <img src={bookData.image ? bookData.image : "/reading.png"} alt='Chýbajúci obrázok' className='BookPageImage' />
+                    <h2>OBSAH</h2>
+                    <p className="BookPageContent" style={{whiteSpace: "pre-wrap"}}>{bookData.content ? bookData.content.replaceAll(/;\s*/gi,"\n") : "Chýbajúci obsah"}</p>
+                </div>
+                <div className="BookPageRight">
+                    <h2>O KNIHE</h2>
+                    <p>{bookData.desc}</p>
+                    <span className="BookPageInfo">
+                        Priemerný čas čítania: {minutesToReadableTime(bookData.read_time)} <br/>
+                        Počet strán: {bookData.pages} <br/>
+                        Rok vydania: {bookData.year_pub} <br/>
+                        ISBN: {bookData.isbn}
+                    </span>
+                    <h2>ÚRYVOK</h2>
+                    <p>{bookData.sample ? bookData.sample : "Chýbajúci úryvok"}</p>
+                    <h2>KĽÚČOVÉ SLOVÁ</h2>
+                    <p2>{bookData.keywords}</p2>
+                </div>
+            </div>
+        </div>
+    );
 }
