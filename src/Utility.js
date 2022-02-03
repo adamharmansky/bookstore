@@ -10,7 +10,7 @@ export function minutesToReadableTime(minutes) {
 
 
 export function bookList(books) {
-    return books.map((book, i) => {
+    return books.map((book) => {
         var authors = [];
 
         if (book.authors) {
