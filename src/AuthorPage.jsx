@@ -13,7 +13,9 @@ export default function AuthorPage() {
 			console.log(data)
 			setAuthorData(data.data)
 		})
-	}, [])
+	}, []).catch((err)=>{
+		console.log(err);
+	})
 
 	return (
 		<div className="AuthorPageContainer">
