@@ -6,7 +6,7 @@ import {minutesToReadableTime} from './Utility'
 const config = require('./config')
 
 export default function AuthorPage() {
-	const [authorData, setAuthorData] = React.useState([])
+	const [authorData, setAuthorData] = React.useState({})
 
 	React.useEffect(() => {
 		Axios.get(config.apiUrl + 'author/?author=' + window.location.pathname.match('[^/]*$')).then((data) => {
