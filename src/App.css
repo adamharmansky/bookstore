@@ -1,231 +1,292 @@
-.NavBar {
-	background-color: #212121;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	box-shadow: 0 0 1em #00000080;
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Custom properties */
+
+:root {
+    --ff-primary: 'Ubuntu', sans-serif;
+    --ff-secondary: 'Bree Serif', serif;
+    --clr-dark: #202020;
+    --clr-light: #fff;
+    --fw-reg: 200;
+    --fw-mid: 400;
+    --fw-bold: 600;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
 }
 
-.NavBarButton {
-	padding: 1em 0.5em 1em 0.5em;
-	text-decoration: none;
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 3rem;
+        --fs-h2: 2.3rem;
+        --fs-h3: 1.3rem;
+        --fs-body: 1.125rem;
+    }
 }
 
-.NavBarButton:hover {
-	background-color: #333333;
-}
 
-.App {
-	text-align: left;
-	background-color: #ffffff;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: left;
-	font-size: 12pt;
-	color: #202020;
+/* General styles */
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-mid);
+    line-height: 1.3;
+    color: var(--clr-dark);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-	color: #81a1c9;
-	font-weight: normal;
+    color: #81a1c9;
+    font-weight: var(--fw-mid);
+}
+
+
+a:hover {
+    opacity: 0.8;
+    transition: 0.5s ease;
+}
+
+b, strong { font-weight: var(--fw-bold); }
+
+h1, h2, h3, h4 {
+    line-height: 1;
+    margin: 0.7em 0;
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-mid);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+
+/* other styles */
+
+.NavBar {
+    background-color: #212121;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0 0 1em #00000080;
+}
+
+.NavBarButton {
+    padding: 1em 0.5em 1em 0.5em;
+    text-decoration: none;
+}
+
+.NavBarButton:hover {
+    background-color: #333333;
+}
+
+.App {
+    text-align: left;
+    background-color: #ffffff;
+    min-height: 100vh;
+    background-image: radial-gradient(#00000020 2px, transparent 0);
+    background-size: 20px 20px;
+    background-position: -10px -10px;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-	margin: 1em;
+    flex-grow: 1;
+    margin: 1em;
 }
 
-.BooksHeading {
-	text-align: center;
+.BooksHeading, .AuthorPageHeading, .AuthorsHeading {
+    text-align: center;
 }
 
 .BookList > p {
-	text-align:center; 
-	padding: 1em;
+    text-align: center;
+    padding: 1em;
 }
 
 .SearchForm {
-	text-align: center;
+    padding: 1em;
+    text-align: center;
 }
 
-form {
-	padding: 1em;
-}
+.SearchForm > input[type="text"] {
+    padding: 0.4rem;
+    width: 250px;
+    font-size: 1em;
 
-form > input[type=text] {
-	padding: 0.4rem;
-	width: 250px;
-	height: 15px;
-	font-size: 1em;
-
-	padding-left: 40px;
-	background-color: #dee1e6;
-	border-radius: 5px;
-	background-image: url('../public/search.png');
-	background-position: 0.5em;
-	background-size: 1em;
-	background-repeat: no-repeat;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #dee1e6;
-	color: #2E3440;
+    padding-left: 40px;
+    background-color: #dee1e6;
+    border-radius: 5px;
+    background-image: url("../public/search.png");
+    background-position: 0.5em;
+    background-size: 1em;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #dee1e6;
+    color: #2e3440;
 }
 
 .BookListItem {
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	margin: 0.7em 0 0.7em 0;
-	padding: 1em;
-	border-color: #dee1e6;
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 5px;
-	color: #202020;
-	text-decoration: none;
-	background-color: #e7eaf040;
-	/* box-shadow: 0 0 0.3em #00000050; */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 0.7em 0 0.7em 0;
+    padding: 1em;
+    border-color: #dee1e6;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    color: #202020;
+    text-decoration: none;
+    background-color: #e7eaf040;
+    /* box-shadow: 0 0 0.3em #00000050; */
 
-	border: none;
-	
-	/* centering */
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
+    border: none;
+
+    /* centering */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .BookListItemImage {
-	width: 6em;
-	object-fit: contain;
+    width: 6em;
+    object-fit: contain;
 }
 
-/*
- * @media(max-width: 800px) {
- * 	.BookListItemImage {
- * 		width: 26%; 
- * 	}
- *}
- */
-
 .BookListItemBlock {
-	margin: 0.5em;
-	padding: 0.5em;
-	margin-left: 2em;
+    margin: 0.5em;
+    padding: 0.5em;
+    margin-left: 2em;
 }
 
 .BookListItemTitle {
-	font-weight: bold;
-	font-style: normal;
-	font-size: 1.2em;
-	margin-bottom: 0.5em;
+    font-style: normal;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
 }
 
 .BookListItemInfo {
-	font-style: italic;
+    font-style: italic;
+}
+
+@media (max-width: 800px) {
+    .BookListDescription {
+        display: none;
+    }
+    .BookPageContainer {
+        padding: 0.5em;
+    }
 }
 
 .pageNumbers {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 .currentPageNumber {
-	text-decoration: none;
-	padding: 0.5em;
-	margin: 0 0.1em 0 0.1em;
-	background-color: #dee1e6;
-	border-radius: 5px;
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0 0.1em 0 0.1em;
+    background-color: #dee1e6;
+    border-radius: 5px;
 }
 
 .pageNumber {
-	text-decoration: none;
-	padding: 0.5em;
-	margin: 0 0.1em 0 0.1em;
-	background-color: #dee1e6;
-	border-radius: 5px;
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0 0.1em 0 0.1em;
+    background-color: #dee1e6;
+    border-radius: 5px;
 }
 
 /* BookPage section */
 
-h1, h2 {
-	margin: 0.5em 0;
-}
 
 .BookPageContainer {
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	/* background-color: ghostwhite; */
-	padding: 2em;
-	/* box-shadow: 0 0 0.5em #00000040; */
-	border: 2px dashed #00000030;
-	/* border-radius: 15px; */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .75em;
+    background-color: white;
 }
 
-.BookPageTitle, .BookPageAuthor
-{
+.BookPageContainer h1,
+.BookPageContainer h2 {
+    padding: 1rem;
+    margin: 0;
+}
+
+.BookPageContainer h1 {
+    border-radius: 8px 8px 0 0;
+    background-color: var(--subject-pri-clr);
+    
+    /*
+    background-image: radial-gradient(white 1px, transparent 0);
+    background-size: 20px 20px;
+    background-position: -10px -10px;
+    */
+}
+
+.BookPageContainer h2 {
+    background-color: var(--subject-sec-clr);
+    border-radius: 0 0 8px 8px;
+    margin-bottom: .3em;
+}
+
+.BookPageContainer h2 a {
+    text-decoration: none;
+    color: #3a506b;
+}
+
+.BookPageContainer h2 a:hover {
+    text-decoration: underline;
 }
 
 .BookPageText {
-	display: flex;
-	flex-wrap: nowrap;
-}
-
-.BookPageLeft {
-	width: 30%;
-}
-
-.BookPageRight {
-	max-width: 70%;
-}
-
-.BookPageRight {
+    margin: 1.5em 1em;
 }
 
 .BookPageImage {
-	display: block;
-	padding: 1em;
-	background-color: #dee1e650;
-	margin: 1em 0;
-	border-radius: 15px;
-	/* border: 2px solid lightgray; */
-	max-width: calc(100%-3em);
+    display: block;
+    padding: 1em;
+    background-color: #dee1e650;
+    border-radius: 15px;
+    /* border: 2px solid lightgray; */
+    float: right;
+    width: 30%;
+    margin-left: 1rem ;
 }
 
 .AuthorListItem {
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	margin: 0.7em 0 0.7em 0;
-	padding: 1em;
-	border-color: #dee1e6;
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 5px;
-	color: #202020;
-	text-decoration: none;
-	background-color: #e7eaf040;
-	/* box-shadow: 0 0 0.3em #00000050; */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 0.7em 0 0.7em 0;
+    padding: 1em;
+    border-color: #dee1e6;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    color: #202020;
+    text-decoration: none;
+    background-color: #e7eaf040;
+    /* box-shadow: 0 0 0.3em #00000050; */
 
-	border: none;
-	
-	/* centering */
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-}
+    border: none;
 
-.AuthorPageHeading {
-	text-align: center;
-}
-
-@media(max-width: 800px) {
-	.BookListDescription {
-		display: none;
-	}
-	.BookPageContainer {
-		padding: 0.5em;
-	}
+    /* centering */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }

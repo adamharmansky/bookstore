@@ -3,7 +3,7 @@ import Axios from 'axios';
 import './App.css';
 import {get_query, bookList as listBooks} from './Utility';
 
-const config = require('./config')
+const config = require("./config");
 
 export default function BookList() {
     var [bookList, setBookList] = React.useState([]);
