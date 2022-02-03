@@ -19,7 +19,7 @@ export default function AuthorPage() {
 
 	return (
 		<div className="AuthorPageContainer">
-			<h1 className="AuthorPageTitle"> {"Knihy od autora " + authorData.author_name} </h1>
+			<h1 className="AuthorPageHeading"> {"Knihy od autora " + authorData.author_name} </h1>
 			{authorData.books ? authorData.books.map((value) => {
 				return (
 					<a className='BookListItem' href={'/book/' + value.isbn}>
