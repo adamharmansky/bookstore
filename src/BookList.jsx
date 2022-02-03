@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Axios from 'axios';
 import './App.css';
 import {get_query, minutesToReadableTime} from './Utility';
@@ -17,18 +18,10 @@ export default function BookList() {
 			setPageCount(data.data.pageCount);
 		})
 	}, []);
-	
+
 	const pageNumbers = [];
-<<<<<<< HEAD
-	const current_page = parseInt(get_query('page'));
+	const current_page = 0 + parseInt(get_query('page'));
 	const query = get_query('q');
-||||||| 8a6d2d51
-	const current_page = parseInt(get_query('page'))
-	const query = get_query('q')
-=======
-	const current_page = 0 + parseInt(get_query('page'))
-	const query = get_query('q')
->>>>>>> 0c68087f4156d4db7fc70f0cfd605d0db741af5d
 
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>);
 	for (let i = 0; i < pageCount; i++) {
