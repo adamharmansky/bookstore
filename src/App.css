@@ -94,15 +94,17 @@ form > input[type=text] {
 }
 
 .BookListItemImage {
-	width: 200px;
+	width: 6em;
 	object-fit: contain;
 }
 
-@media(max-width: 800px) {
-	.BookListItemImage {
-		width: 26%; 
-	}
-}
+/*
+ * @media(max-width: 800px) {
+ * 	.BookListItemImage {
+ * 		width: 26%; 
+ * 	}
+ *}
+ */
 
 .BookListItemBlock {
 	margin: 0.5em;
