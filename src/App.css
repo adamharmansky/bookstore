@@ -108,9 +108,7 @@ form > input[type=text] {
 
 @media(max-width: 800px) {
 	.BookListDescription {
-		margin: 0.5em;
-		padding: 0.5em;
-		margin-left: 2em;
+		display: none;
 	}
 }
 
