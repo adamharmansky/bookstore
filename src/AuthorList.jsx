@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import './App.css';
-import { get_query, get_page } from './Utility';
+import get_query from './Utility';
 
 const config = require('./config');
 
@@ -19,8 +19,8 @@ export default function AuthorList() {
 	}, [])
 
 	const pageNumbers = [];
-	const current_page = parseInt(get_page());
-	const query = get_query();
+	const current_page = parseInt(get_query('page'));
+	const query = get_query('q');
 
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/authors?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>);
 	for (let i = 0; i < pageCount; i++) {
