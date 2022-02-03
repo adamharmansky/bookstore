@@ -183,6 +183,14 @@ main {
     font-style: italic;
 }
 
+.BookListItemStripe {
+    min-width: 10px;
+    position: relative;
+    background-color: var(--subject-pri-clr);
+    margin-right: 0.5em;
+    border-radius: 5px;
+}
+
 @media (max-width: 800px) {
     .BookListDescription {
         display: none;

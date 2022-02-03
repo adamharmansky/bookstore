@@ -19,8 +19,16 @@ export function bookList(books) {
             });
         }
 
+        const style = {
+            "--subject-pri-clr": book.subject_color0,
+            "--subject-sec-clr": book.subject_color1,
+            "--subject-ter-clr": book.subject_color2,
+            "--subject-bg": book.subject_background
+        };
+
         return (
-            <a key={book.title} className='BookListItem' href={'/book/' + book.isbn}>
+            <a key={book.title} className='BookListItem' href={'/book/' + book.isbn} style={style}>
+                    <div className='BookListItemStripe'> </div>
                     <img className='BookListItemImage' src={book.image ? book.image : "/reading.png"} alt='Chýbajúci obrázok'></img>
                     <div className='BookListItemBlock'>
                         <h3> {book.title} </h3>
