@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import './App.css'
@@ -7,6 +8,16 @@ import BookPage from './BookPage'
 import AuthorPage from './AuthorPage'
 import AddBook from './AddBook'
 import AuthorList from './AuthorList'
+=======
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import './App.css';
+import BookList from './BookList';
+import MainPage from './MainPage';
+import BookPage from './BookPage';
+import AddBook from './AddBook';
+import AuthorList from './AuthorList';
+>>>>>>> 77a1e938d7fce19f0f071fed729dd264faba4beb
 
 function App() {
 	return (
@@ -30,7 +41,7 @@ function App() {
 				</Router>
 			</main>
 		</div>
-	)
+	);
 }
 
 export default App;

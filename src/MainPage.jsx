@@ -1,5 +1,5 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
 
 export default function BookList() {
 	return (
@@ -7,5 +7,5 @@ export default function BookList() {
 			<h1> Databáza kníh </h1>
 			<p> Chýbajúci text </p>
 		</div>
-	)
+	);
 }

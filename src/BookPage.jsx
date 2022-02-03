@@ -5,21 +5,21 @@ import './App.css'
 const config = require('./config')
 
 export default function BookPage() {
-	const [bookData, setBookData] = React.useState([])
+	const [bookData, setBookData] = React.useState([]);
 
 	React.useEffect(() => {
 		Axios.get(config.apiUrl + 'book/?book=' + window.location.pathname.match('[^/]*$')).then((data) => {
 			console.log(data)
 			setBookData(data.data)
 		})
-	}, [])
+	}, []);
 
 	const style = {
 		"--subject-pri-clr": bookData.subject_color0,
 		"--subject-sec-clr": bookData.subject_color1,
 		"--subject-ter-clr": bookData.subject_color2,
 		"--subject-bg": bookData.subject_background
-	}
+	};
 
 	return (
 		<div className="BookPageContainer" style={style}>
@@ -53,5 +53,5 @@ export default function BookPage() {
 				</div>
 			</div>
 		</div>
-	)
+	);
 }

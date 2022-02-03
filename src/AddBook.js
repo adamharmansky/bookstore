@@ -1,25 +1,25 @@
-import React from 'react'
-import Axios from 'axios'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import Autocomplete from '@material-ui/lab/Autocomplete'
-import './App.css'
+import React from 'react';
+import Axios from 'axios';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import './App.css';
 
-const config = require('./config')
+const config = require('./config');
 
 export default function AddBook() {
-	const [title, setTitle] = React.useState("")
-	const [author, setAuthor] = React.useState("")
-	const [description, setDescription] = React.useState("")
-	const [subject, setSubject] = React.useState("")
-	const [keywords, setKeywords] = React.useState("")
-	const [readTime, setReadTime] = React.useState("")
-	const [pageCount, setPageCount] = React.useState(0)
-	const [yearPub, setYearPub] = React.useState(0)
-	const [lang, setLang] = React.useState("")
-	const [isbn, setIsbn] = React.useState(0)
-	// const [image, setImage] = React.useState("")
-	const [subjects, setSubjects] = React.useState([])
+	const [title, setTitle] = React.useState("");
+	const [author, setAuthor] = React.useState("");
+	const [description, setDescription] = React.useState("");
+	const [subject, setSubject] = React.useState("");
+	const [keywords, setKeywords] = React.useState("");
+	const [readTime, setReadTime] = React.useState("");
+	const [pageCount, setPageCount] = React.useState(0);
+	const [yearPub, setYearPub] = React.useState(0);
+	const [lang, setLang] = React.useState("");
+	const [isbn, setIsbn] = React.useState(0);
+	// const [image, setImage] = React.useState("");
+	const [subjects, setSubjects] = React.useState([]);
 
 	React.useEffect(() => {
 //		Axios.get(config.apiUrl + 'subject/list').then((data) => {
@@ -29,8 +29,8 @@ export default function AddBook() {
 //				options.push(data.data[i].name)
 //			setSubjects(data.data[0])
 //		})
-		setSubjects(['SJL', 'ANJ', 'MAT'])
-	}, [])
+		setSubjects(['SJL', 'ANJ', 'MAT']);
+	}, []);
 
 	function handleSubmit (e) {
 		Axios.post(config.apiUrl + 'book/new/', {
@@ -47,9 +47,9 @@ export default function AddBook() {
 			// image: image
 
 		}).then((response) => {
-			console.log(response)
+			console.log(response);
 		})
-	}
+	};
 
 	return (
 		<div className='AddBookForm'>
@@ -67,5 +67,5 @@ export default function AddBook() {
 			<TextField style={{width: 300}} label='Obrázok' onChange={(e)=>{setIsbn(e.target.value)}} />
 			<Button onClick={handleSubmit}> Pridať </Button>
 		</div>
-	)
+	);
 }

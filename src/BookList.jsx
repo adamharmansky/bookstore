@@ -1,6 +1,7 @@
-import React from 'react'
-import Axios from 'axios'
-import './App.css'
+import React from 'react';
+import Axios from 'axios';
+import './App.css';
+import { get_query, get_page } from './Utility';
 
 const config = require('./config')
 
@@ -11,31 +12,31 @@ function get_query(q) {
 }
 
 function minutesToReadableTime(minutes) {
-	return ((minutes>=60?Math.floor(minutes/60)+"h ":"")+(minutes%60!==0?minutes%60+"m":""))
+	return ((minutes>=60?Math.floor(minutes/60)+"h ":"")+(minutes%60!==0?minutes%60+"m":""));
 }
 
 export default function BookList() {
-	var [bookList, setBookList] = React.useState([])
-	var [pageCount, setPageCount] = React.useState(0)
+	var [bookList, setBookList] = React.useState([]);
+	var [pageCount, setPageCount] = React.useState(0);
 
 	React.useEffect(() => {
 		const url = new URL(window.location.href)
 		Axios.get(config.apiUrl + 'list' + url.search).then((data) => {
-			console.log(data)
-			setBookList(data.data.books)
-			setPageCount(data.data.pageCount)
+			console.log(data);
+			setBookList(data.data.books);
+			setPageCount(data.data.pageCount);
 		})
-	}, [])
+	}, []);
 
 	const pageNumbers = [];
 	const current_page = parseInt(get_query('page'))
 	const query = get_query('q')
 
-	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>)
+	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>);
 	for (let i = 0; i < pageCount; i++) {
-		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(query?"&q="+query:"")}>{i}</a>)
+		pageNumbers.push(i === current_page ? <span className="currentPageNumber">{i}</span> : <a className="pageNumber" href={"/list?page="+i+(query?"&q="+query:"")}>{i}</a>);
 	}
-	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>)
+	if (current_page < pageCount-1) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page+1)+(query?"&q="+query:"")}>{">>"}</a>);
 
 	return (
 		<div>
@@ -68,5 +69,5 @@ export default function BookList() {
 				{pageCount > 1 ? <div className="pageNumbers"> {pageNumbers} </div> : []}
 			</div>
 		</div>
-	)
+	);
 }
