@@ -25,36 +25,16 @@ export default function BookList() {
 
     // Adding page numbers to the bottom of the page
     const pageNumbers = [];
-
-    if (current_page > 0) {
-        pageNumbers.push(
-            <a className="pageNumber" href={"/list?page=" + (current_page - 1) + (query ? "&q=" + query : "")}>
-                {"<<"}
-            </a>
-        );
-    }
-    for (let i = 0; i < pageCount; i++) {
-        pageNumbers.push(
-            i === current_page ? (
-                <span className="currentPageNumber">{i}</span>
-            ) : (
-                <a className="pageNumber" href={"/list?page=" + i + (query ? "&q=" + query : "")}>
-                    {i}
-                </a>
-            )
-        );
-    }
-    if (current_page < pageCount - 1) {
-        pageNumbers.push(
-            <a className="pageNumber" href={"/list?page=" + (current_page + 1) + (query ? "&q=" + query : "")}>
-                {">>"}
-            </a>
-        );
-    }
+    if (current_page > 0)
+        pageNumbers.push( <a className="pageNumber" href={"/list?page=" + (current_page - 1) + (query ? "&q=" + query : "")}> {"<<"} </a>);
+    for (let i = 0; i < pageCount; i++) 
+        pageNumbers.push( i === current_page ? ( <span className="currentPageNumber">{i}</span>) : ( <a className="pageNumber" href={"/list?page=" + i + (query ? "&q=" + query : "")}> {i} </a>));
+    if (current_page < pageCount - 1) 
+        pageNumbers.push( <a className="pageNumber" href={"/list?page=" + (current_page + 1) + (query ? "&q=" + query : "")}> {">>"} </a>);
 
     return (
         <div>
-            <h1 className="BooksHeading"> Knihy </h1>
+            <h1 className="BooksHeading"> Knihy </h1> 
             <form className="SearchForm" name="search_form">
                 <input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={query} />
             </form>
@@ -72,7 +52,7 @@ export default function BookList() {
                         <a className="BookListItem" href={"/book/" + value.isbn}>
                             <img className="BookListItemImage" src={value.image ? value.image : "/reading.png"} alt="Chýbajúci obrázok"></img>
                             <div className="BookListItemBlock">
-                                <div className="BookListItemTitle"> {value.title} </div>
+                                <h3 className="BookListItemTitle"> {value.title} </h3>
                                 <div className="BookListItemInfo"> {authors} {value.year_pub}, {value.pages} strán, {minutesToReadableTime(value.read_time)}, {value.lang_name}, {value.subject_name} </div>
                                 <p className="BookListDescription"> {value.desc ? value.desc.slice(0, 360) + (value.desc.length > 360 ? "..." : "") : "Žiaden popis"} </p>
                             </div>
