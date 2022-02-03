@@ -52,91 +52,17 @@ export default function AddBook() {
 
     return (
         <div className="AddBookForm">
-            <TextField
-                style={{ width: 300 }}
-                label="Názov knihy"
-                onChange={(e) => {
-                    setTitle(e.target.value);
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Autor"
-                onChange={(e) => {
-                    setAuthor(e.target.value);
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Popis"
-                onChange={(e) => {
-                    setDescription(e.target.value);
-                }}
-            />
-            <Autocomplete
-                disablePortal
-                options={subjects}
-                style={{ width: 300 }}
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Predmet"
-                        variant="outlined"
-                        onChange={(e) => {
-                            setSubject(e.target.value);
-                        }}
-                    />
-                )}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Kľúčové slová"
-                onChange={(e) => {
-                    setKeywords(e.target.value);
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Čas čítania"
-                onChange={(e) => {
-                    setReadTime(e.target.value);
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Počet strán"
-                onChange={(e) => {
-                    setPageCount(parseInt(e.target.value));
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Rok vydania"
-                onChange={(e) => {
-                    setYearPub(parseInt(e.target.value));
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Jazyk"
-                onChange={(e) => {
-                    setLang(e.target.value);
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="ISBN"
-                onChange={(e) => {
-                    setIsbn(parseInt(e.target.value));
-                }}
-            />
-            <TextField
-                style={{ width: 300 }}
-                label="Obrázok"
-                onChange={(e) => {
-                    setIsbn(e.target.value);
-                }}
-            />
+            <TextField style={{ width: 300 }} label="Názov knihy" onChange={(e) => { setTitle(e.target.value); }} />
+            <TextField style={{ width: 300 }} label="Autor" onChange={(e) => { setAuthor(e.target.value); }} />
+            <TextField style={{ width: 300 }} label="Popis" onChange={(e) => { setDescription(e.target.value); }} />
+            <Autocomplete disablePortal options={subjects} style={{ width: 300 }} renderInput={(params) => ( <TextField {...params} label="Predmet" variant="outlined" onChange={(e) => { setSubject(e.target.value); }} />)} />
+            <TextField style={{ width: 300 }} label="Kľúčové slová" onChange={(e) => { setKeywords(e.target.value); }} />
+            <TextField style={{ width: 300 }} label="Čas čítania" onChange={(e) => { setReadTime(e.target.value); }} />
+            <TextField style={{ width: 300 }} label="Počet strán" onChange={(e) => { setPageCount(parseInt(e.target.value)); }} />
+            <TextField style={{ width: 300 }} label="Rok vydania" onChange={(e) => { setYearPub(parseInt(e.target.value)); }} />
+            <TextField style={{ width: 300 }} label="Jazyk" onChange={(e) => { setLang(e.target.value); }} />
+            <TextField style={{ width: 300 }} label="ISBN" onChange={(e) => { setIsbn(parseInt(e.target.value)); }} />
+            <TextField style={{ width: 300 }} label="Obrázok" onChange={(e) => { setIsbn(e.target.value); }} />
             <Button onClick={handleSubmit}> Pridať </Button>
         </div>
     );
