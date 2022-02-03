@@ -17,7 +17,7 @@ export default function BookList() {
 			setPageCount(data.data.pageCount);
 		})
 	}, []);
-
+	
 	const pageNumbers = [];
 	const page_text = get_query('page')
 	const current_page = page_text.length > 0 ? parseInt(page_text) : 0;
