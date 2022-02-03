@@ -19,7 +19,7 @@ export default function BookList() {
 	}, []);
 
 	const pageNumbers = [];
-	const current_page = parseInt(get_query('page'))
+	const current_page = 0 + parseInt(get_query('page'))
 	const query = get_query('q')
 
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>);
