@@ -4,16 +4,10 @@ import './App.css'
 
 const config = require('./config')
 
-function get_query() {
+function get_query(q) {
 	const params = new URLSearchParams(window.location.search);
-	if (params.has('q')) return params.get('q')
+	if (params.has(q)) return params.get(q)
 	else return ''
-}
-
-function get_page() {
-	const params = new URLSearchParams(window.location.search);
-	if (params.has('page')) return params.get('page')
-	else return 0
 }
 
 function minutesToReadableTime(minutes) {
@@ -34,8 +28,8 @@ export default function BookList() {
 	}, [])
 
 	const pageNumbers = [];
-	const current_page = parseInt(get_page())
-	const query = get_query()
+	const current_page = parseInt(get_query('page'))
+	const query = get_query('q')
 
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>)
 	for (let i = 0; i < pageCount; i++) {
@@ -50,7 +44,7 @@ export default function BookList() {
 					<input name="q" type="text" placeholder="Zadajte názov knihy..." defaultValue={query}/>
 			</form>
 			<div className='BookList'>
-				{bookList.map((value, key) => {
+				{bookList.map((value) => {
 					const authors = [];
 
 					for (let i = 0; i < value.authors.length; i++) {

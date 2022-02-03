@@ -3,23 +3,6 @@ import Axios from 'axios'
 import './App.css'
 
 const config = require('./config')
-/* {
-	isbn: int,
-	title: string,
-	subject_name: string,
-	subject_colors: [string, string, string],
-	subject_bg: string,
-	keywords: string,
-	authors: [{ id: int, name: string, }, ...],
-	desc: string,
-	read_time: int,
-	pages: int,
-	year_pub: int,
-	lang_id: int,
-	lang_name: string,
-	image: string,
-	content: string
-} */
 
 export default function BookPage() {
 	const [bookData, setBookData] = React.useState([])
