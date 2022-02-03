@@ -107,15 +107,6 @@ form > input[type=text] {
  *}
  */
 
-@media(max-width: 800px) {
-	.BookListDescription {
-		display: none;
-	}
-	.BookPageContainer {
-		padding: 0.5em;
-	}
-}
-
 .BookListItemBlock {
 	margin: 0.5em;
 	padding: 0.5em;
@@ -155,8 +146,6 @@ form > input[type=text] {
 	background-color: #dee1e6;
 	border-radius: 5px;
 }
-
-
 
 /* BookPage section */
 
@@ -230,4 +219,13 @@ h1, h2 {
 
 .AuthorPageHeading {
 	text-align: center;
+}
+
+@media(max-width: 800px) {
+	.BookListDescription {
+		display: none;
+	}
+	.BookPageContainer {
+		padding: 0.5em;
+	}
 }
