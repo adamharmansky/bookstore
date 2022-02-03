@@ -19,8 +19,16 @@ export default function BookList() {
 	}, []);
 	
 	const pageNumbers = [];
+<<<<<<< HEAD
 	const current_page = parseInt(get_query('page'));
 	const query = get_query('q');
+||||||| 8a6d2d51
+	const current_page = parseInt(get_query('page'))
+	const query = get_query('q')
+=======
+	const current_page = 0 + parseInt(get_query('page'))
+	const query = get_query('q')
+>>>>>>> 0c68087f4156d4db7fc70f0cfd605d0db741af5d
 
 	if (current_page > 0) pageNumbers.push(<a className="pageNumber" href={"/list?page="+(current_page-1)+(query?"&q="+query:"")}>{"<<"}</a>);
 	for (let i = 0; i < pageCount; i++) {
