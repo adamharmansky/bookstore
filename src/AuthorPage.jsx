@@ -12,10 +12,10 @@ export default function AuthorPage() {
 		Axios.get(config.apiUrl + 'author/?author=' + window.location.pathname.match('[^/]*$')).then((data) => {
 			console.log(data)
 			setAuthorData(data.data)
+		}).catch((err)=>{
+			console.log(err);
 		})
-	}, []).catch((err)=>{
-		console.log(err);
-	})
+	}, [])
 
 	return (
 		<div className="AuthorPageContainer">
