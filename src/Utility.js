@@ -1,11 +1,5 @@
-export function get_query() {
+export function get_query(q) {
 	const params = new URLSearchParams(window.location.search);
-	if (params.has('q')) return params.get('q');
-	else return '';
-}
-
-export function get_page() {
-	const params = new URLSearchParams(window.location.search);
-	if (params.has('page')) return params.get('page');
-	else return 0;
+	if (params.has(q)) return params.get(q)
+	else return ''
 }

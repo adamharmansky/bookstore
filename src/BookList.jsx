@@ -1,15 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 import './App.css';
-import { get_query, get_page } from './Utility';
+import get_query from './Utility';
 
 const config = require('./config')
-
-function get_query(q) {
-	const params = new URLSearchParams(window.location.search);
-	if (params.has(q)) return params.get(q)
-	else return ''
-}
 
 function minutesToReadableTime(minutes) {
 	return ((minutes>=60?Math.floor(minutes/60)+"h ":"")+(minutes%60!==0?minutes%60+"m":""));
