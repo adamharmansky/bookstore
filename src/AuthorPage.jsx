@@ -9,6 +9,7 @@ export default function AuthorPage() {
 	const [authorData, setAuthorData] = React.useState({})
 
 	React.useEffect(() => {
+		console.log(config.apiUrl + 'author/?author=' + window.location.pathname.match('[^/]*$'))
 		Axios.get(config.apiUrl + 'author/?author=' + window.location.pathname.match('[^/]*$')).then((data) => {
 			console.log(data)
 			setAuthorData(data.data)
