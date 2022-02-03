@@ -1,6 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import './App.css'
+import {minutesToReadableTime} from './Utility'
 
 const config = require('./config')
 
@@ -41,7 +42,7 @@ export default function BookPage() {
 					<h2>O KNIHE</h2>
 					<p>{bookData.desc}</p>
 					<span className="BookPageInfo">
-						Priemerný čas čítania: {bookData.read_time} <br/>
+						Priemerný čas čítania: {minutesToReadableTime(bookData.read_time)} <br/>
 						Počet strán: {bookData.pages} <br/>
 						Rok vydania: {bookData.year_pub} <br/>
 						ISBN: {bookData.isbn}

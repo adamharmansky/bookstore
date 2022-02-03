@@ -1,13 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 import './App.css';
-import {get_query} from './Utility';
+import {get_query, minutesToReadableTime} from './Utility';
 
 const config = require('./config')
-
-function minutesToReadableTime(minutes) {
-	return ((minutes>=60?Math.floor(minutes/60)+"h ":"")+(minutes%60!==0?minutes%60+"m":""));
-}
 
 export default function BookList() {
 	var [bookList, setBookList] = React.useState([]);
