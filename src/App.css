@@ -47,7 +47,6 @@ a {
     font-weight: var(--fw-mid);
 }
 
-
 a:hover {
     opacity: 0.8;
     transition: 0.5s ease;
@@ -155,6 +154,12 @@ main {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    transition: .3s ease;
+}
+
+.BookListItem:hover {
+    opacity: 1;
+    background-color: #e7eaf0a1;
 }
 
 .BookListItemImage {
