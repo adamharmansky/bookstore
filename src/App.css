@@ -28,6 +28,7 @@
 
 a {
 	color: #81a1c9;
+	font-weight: normal;
 }
 
 main {
@@ -94,15 +95,17 @@ form > input[type=text] {
 }
 
 .BookListItemImage {
-	width: 200px;
+	width: 6em;
 	object-fit: contain;
 }
 
-@media(max-width: 800px) {
-	.BookListItemImage {
-		width: 26%; 
-	}
-}
+/*
+ * @media(max-width: 800px) {
+ * 	.BookListItemImage {
+ * 		width: 26%; 
+ * 	}
+ *}
+ */
 
 .BookListItemBlock {
 	margin: 0.5em;
@@ -143,8 +146,6 @@ form > input[type=text] {
 	background-color: #dee1e6;
 	border-radius: 5px;
 }
-
-
 
 /* BookPage section */
 
@@ -218,4 +219,13 @@ h1, h2 {
 
 .AuthorPageHeading {
 	text-align: center;
+}
+
+@media(max-width: 800px) {
+	.BookListDescription {
+		display: none;
+	}
+	.BookPageContainer {
+		padding: 0.5em;
+	}
 }
