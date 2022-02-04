@@ -16,9 +16,9 @@ export default function BookPage() {
     }, []);
 
     const style = {
-        "--subject-pri-clr": bookData.subject_color0,
-        "--subject-sec-clr": bookData.subject_color1,
-        "--subject-ter-clr": bookData.subject_color2,
+        "--subject-clr0": bookData.subject_color0,
+        "--subject-clr1": bookData.subject_color1,
+        "--subject-clr2": bookData.subject_color2,
         "--subject-bg": bookData.subject_background
     };
 
