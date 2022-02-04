@@ -20,10 +20,10 @@ export function bookList(books) {
         }
 
         const style = {
-            "--subject-pri-clr": book.subject_color0,
-            "--subject-sec-clr": book.subject_color1,
-            "--subject-ter-clr": book.subject_color2,
-            "--subject-bg": book.subject_background
+            "--subject-clr0": book.subject_color0,
+            "--subject-clr1": book.subject_color1,
+            "--subject-clr2": book.subject_color2,
+            "--subject-bg":   book.subject_background
         };
 
         return (

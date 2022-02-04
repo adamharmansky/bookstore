@@ -165,7 +165,7 @@ main {
 .BookListItemStripe {
     min-width: 10px;
     position: relative;
-    background-color: var(--subject-pri-clr);
+    background-color: var(--subject-clr0);
     margin-right: 1em;
     border-radius: 5px;
 }
@@ -239,7 +239,7 @@ main {
 
 .BookPageContainer h1 {
     border-radius: 8px 8px 0 0;
-    background-color: var(--subject-pri-clr);
+    background-color: var(--subject-clr0);
     
     /*
     background-image: radial-gradient(white 1px, transparent 0);
@@ -249,7 +249,7 @@ main {
 }
 
 .BookPageContainer h2 {
-    background-color: var(--subject-sec-clr);
+    background-color: var(--subject-clr1);
     border-radius: 0 0 8px 8px;
     margin-bottom: .3em;
 }
